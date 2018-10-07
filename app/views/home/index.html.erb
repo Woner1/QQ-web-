@@ -1,0 +1,229 @@
+<script src="//y.gtimg.cn/music/h5/player/player.js?max_age=2592000"></script>
+
+
+
+
+<!--<button id="play">播放</button>-->
+<!--<button id="pause">暂停</button>-->
+<button id="next">下一首</button>
+<button id="pre">上一首</button>
+<button id="down">快退五秒</button>
+<button id="spree">快进五秒</button>
+
+<br>
+<button id="new">最新</button>
+<input type="text" id="texts">
+<input type="text" id="page" value=1>
+<button id="search">search</button>
+<br>
+
+<button id="random">随机推荐的音乐</button>
+<button id="top">根据榜单ID获得榜单的歌曲列表</button>
+<br>
+<br>
+
+
+
+
+
+
+
+
+<% for i in 0..99 %>
+
+  <div id="demo<%=i %>" style="color: black;">1</div><button id="play_music<%=i %>" value="" songmid="">播放</button>  <button id="payplay<%=i %>"  value=""></button>
+  <br>
+  <img src="" id="image<%= i%>" >
+<% end %>
+
+
+<script src="https://y.gtimg.cn/music/h5/client/jsbridge.js?max_age=2592000"></script>
+
+<script>
+
+
+
+
+
+
+
+    var params = {
+        target: "auto"
+    };
+    var player = new QMplayer(params);
+    // console.log(player.state);
+    // console.log(player.data);
+    // console.log(player.currentTime);
+    // console.log(player.duration);
+    // console.log(player.version);
+
+    document.getElementById("play").onclick = function() {
+        player.play("002n7IZK25SC46");
+    };
+    document.getElementById("pause").onclick = function() {
+        player.pause();
+    }
+    document.getElementById("next").onclick = function() {
+        player.palyeNext();
+    }
+    document.getElementById("pre").onclick = function() {
+        player.playePre();
+    }
+    document.getElementById("spree").onclick = function() {
+        player.currentTime = player.currentTime + 5;
+    }
+    document.getElementById("down").onclick = function() {
+        player.currentTime = player.currentTime - 5;
+    }
+
+
+
+</script>
+<script type="text/javascript">
+    //最新音乐
+
+        let url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=27&_=1519963122923';
+        $.ajax({
+            url: url,
+            type: "get",
+            dataType: 'jsonp',
+            jsonp: "jsonpCallback",
+            scriptCharset: 'GBK',//解决中文乱码
+            success: function (data) {
+                //最新音乐数据
+                console.log(data);
+
+                
+                for (var i=0;i<data.songlist.length;i++){
+                    //console.log(data.songlist[i].data.albumname);
+                    var cur_song_num=data.cur_song_num; //获取最新歌曲的长度
+
+
+
+                    //获取图片的mid
+                    var albummid=data.songlist[i].data.albummid;
+                    var image_url = document.getElementById('image'+i);
+                    image_url.src = "https://y.gtimg.cn/music/photo_new/T002R300x300M000"+albummid+".jpg?max_age=2592000";
+
+                    //获取歌曲名字
+                    document.getElementById("demo"+i).innerHTML=data.songlist[i].data.albumname;
+
+
+
+                    //获取歌曲的songmid
+
+                    var button_play=document.getElementById("play_music"+i);
+                    button_play.value=data.songlist[i].data.songmid; //把songmid添加到button_play[i]的value
+                    document.getElementById("play_music"+i).onclick = function () {
+
+                        var button_play_value=$(this).attr("value");//获取到当前按钮的value
+
+                        player.play(button_play_value);
+
+                    };
+
+                    //获取歌曲可以不可以播放的状态，当payplay:1是不可播放状态
+                    console.log(data.songlist[i].data.pay.payplay);
+                    var payplay=document.getElementById("payplay"+i);//获取可不可以播放的
+                    payplay.value=data.songlist[i].data.pay.payplay;
+                    if (payplay.value=="1"){
+                        $("#demo"+i).css("background","red")
+                       $("#payplay"+i).html("不可播放");
+                    }else{
+                        $("#demo"+i).css("background","green")
+                        $("#payplay"+i).html("可播放");
+                    }
+
+
+
+                    //获取id
+                    var demo=document.getElementById("demo"+i).id;
+
+                }
+                // console.log(data.code);
+                // console.log(data.color);
+
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
+
+    //歌曲搜索
+    document.getElementById("search").onclick = function () {
+        var song=document.getElementById("texts");
+
+        var songName = song.value;//歌曲或者歌手名字
+
+
+        var page=document.getElementById("page");
+
+            var  pagenum=page.value; //修改页数
+            var pages=parseInt(pagenum);
+            console.log("http://s.music.qq.com/fcgi-bin/music_search_new_platform?t=0& n=5&aggr=1&cr=1&loginUin=0& inCharset=GB2312&outCharset=utf-8&notice=0& platform=jqminiframe.json&needNewCode=0&p="+pages+"&catZhida=0& remoteplace=sizer.newclient.next_song&w=" + songName);
+
+        $.ajax({
+            url: "http://s.music.qq.com/fcgi-bin/music_search_new_platform?t=0& n=5&aggr=1&cr=1&loginUin=0& inCharset=GB2312&outCharset=utf-8&notice=0& platform=jqminiframe.json&needNewCode=0&p="+pages+"&catZhida=0& remoteplace=sizer.newclient.next_song&w=" + songName,
+            type: "get",
+            // async:false,
+            dataType: 'jsonp',
+            jsonp: "jsonpCallback",
+            success: function (data) {
+                // var json = data.data.song;
+                //root.song = json.list;
+                console.log(data);
+
+            },
+            error: function (e) {
+                console.log('error');
+            }
+        });
+    }
+    //推荐音乐
+    document.getElementById("random").onclick = function () {
+        let url= 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8¬ice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=36&_=1520777874472';
+        $.ajax({
+            url: url,
+            type: "get",
+            // async:false,
+            dataType: 'jsonp',
+            jsonp: "jsonpCallback",
+            success: function (data) {
+                // var json = data.data.song;
+                //root.song = json.list;
+                console.log(data);
+
+            },
+            error: function (e) {
+                console.log('error');
+            }
+        });
+    }
+    //根据榜单ID获得榜单的歌曲列表AP
+    document.getElementById("top").onclick=function () {
+        let url = 'https://c.y.qq.com/v8/fcg-bin/fcg_myqq_toplist.fcg?g_tk=1928093487&inCharset=utf-8&outCharset=utf-8&notice=0&format=jsonp&uin=0&needNewCode=1&platform=h5';
+        $.ajax({
+            url: url,
+            type: "get",
+            dataType: 'jsonp',
+            jsonp: "jsonpCallback",
+            scriptCharset: 'GBK',//解决中文乱码
+            success: function (data) {
+                //推荐音乐数据
+                console.log(data)
+            },
+            error: function (e) {
+                console.log('error');
+            }
+        });
+    }
+
+
+</script>
+
+
+
+
+
+
+

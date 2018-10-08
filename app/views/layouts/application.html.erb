@@ -1,15 +1,22 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>QqMusic</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>QQ音乐-千万正版音乐海量无损曲库新歌热歌天天畅听的高品质音乐平台！</title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+ <link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/layout.css?max_age=25920000&amp;v=20180803">
+  <link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/index0913.css?max_age=25920000">
+  <link rel="stylesheet" type="text/css" href="https://stdl.qq.com/stdl/qqbrowser/floatlayer/css/qb-ie-remind.css?1539004664829">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body  >
+
+<%= render :partial => "layouts/title"  %>
+<%= yield %>
+<%= render :partial => "layouts/foot"  %>
+
+</body>
 </html>

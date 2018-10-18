@@ -1,0 +1,2 @@
+module NewSongHelper
+end

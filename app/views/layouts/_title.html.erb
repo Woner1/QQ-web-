@@ -10,49 +10,51 @@
 
       </li>
       <li class="top_nav__item">
-        <a href="/portal/profile.html" class="top_nav__link" title="我的音乐">我的音乐</a>
+        <a  class="top_nav__link" title="我的音乐">我的音乐</a>
       </li>
       <li class="top_nav__item">
-        <a href="//y.qq.com/download/index.html" class="top_nav__link" title="客户端" rel="noopener" target="_blank">客户端</a>
+        <a  class="top_nav__link" title="客户端" rel="noopener" target="_blank">客户端</a>
       </li>
       <li class="top_nav__item">
-        <a href="//y.qq.com/vip/daren_recruit/apply.html" data-stat="y_new.top.darenrecruit" class="top_nav__link js_nav_click" title="音乐号" rel="noopener" target="_blank">音乐号</a>
+        <a  data-stat="y_new.top.darenrecruit" class="top_nav__link js_nav_click" title="音乐号" rel="noopener" target="_blank">音乐号</a>
       </li>
       <li class="top_nav__item">
-        <a href="//y.qq.com/portal/vipportal/index.html" class="top_nav__link" title="VIP" rel="noopener" target="_blank">VIP</a>
+        <a  class="top_nav__link" title="VIP" rel="noopener" target="_blank">VIP</a>
       </li>
     </ul>
     <ul class="mod_top_subnav" style="display:;">
       <li class="top_subnav__item">
-        <a href="//y.qq.com" class="top_subnav__link top_subnav__link--current">首页</a>
+        <a  class="top_subnav__link top_subnav__link--current">首页</a>
       </li>
       <li class="top_subnav__item">
-        <a href="/portal/singer_list.html" class="top_subnav__link">歌手</a>
+        <a  class="top_subnav__link">歌手</a>
       </li>
       <li class="top_subnav__item">
-        <a href="/portal/album_lib.html" class="top_subnav__link">专辑</a>
+        <a  class="top_subnav__link">专辑</a>
       </li>
       <li class="top_subnav__item">
-        <a href="/n/yqq/toplist/4.html" class="top_subnav__link">排行榜</a>
+        <a  class="top_subnav__link">排行榜</a>
       </li>
       <li class="top_subnav__item">
-        <a href="/portal/playlist.html" class="top_subnav__link">分类歌单</a>
+        <a  class="top_subnav__link">分类歌单</a>
       </li>
       <li class="top_subnav__item">
-        <a href="/portal/radio.html" class="top_subnav__link">电台</a>
+        <a  class="top_subnav__link">电台</a>
       </li>
       <li class="top_subnav__item">
-        <a href="/portal/mv_lib.html#t6=2" class="top_subnav__link">MV</a>
+        <a  class="top_subnav__link">MV</a>
       </li>
       <li class="top_subnav__item">
-        <a href="/portal/album_mall.html" class="top_subnav__link">数字专辑</a>
+        <a  class="top_subnav__link">数字专辑</a>
       </li>
     </ul>
     <!-- 导航 E -->
     <div class="mod_top_search" role="search">
       <div class="mod_search_input">
-        <input class="search_input__input" aria-label="请输入搜索内容" type="text" placeholder="搜索音乐、MV、歌单、用户" accesskey="s">
-        <button class="search_input__btn"><i class="icon_search sprite"></i><span class="icon_txt">搜索</span></button>
+        <%= form_tag  search_index_path,:method => :get do %>
+          <%= text_field_tag :search, params[:search],class: "search_input__input",placeholder: "搜索音乐、MV、歌单、用户"%>
+           <button class="search_input__btn"><i class="icon_search sprite"></i><%=submit_tag '搜索',class: "icon_txt" %></button>
+          <% end %>
       </div>
       <div class="js_smartbox"><div class="mod_search_other" style="">
         <div class="search_hot">
@@ -111,9 +113,9 @@
       <!-- 未登录 -->
       <span class="mod_top_login">
 		    <a class="top_login__link js_logined" href="//y.qq.com/portal/profile.html#stat=y_new.top.user_pic" onclick="setStatCookie&amp;&amp;setStatCookie();" style="display:none;"></a>
-                    <a class="top_login__link js_login" data-stat="y_new.top.login" href="javascript:;">
-                        登录
-                    </a>
+
+                    <%= link_to '登录',new_user_session_path,class: "top_login__link js_login"%>
+
 
                     <a class="login__link header__link js_login" data-stat="y_new.top.login" href="javascript:;">登录</a>
                     <a class="mod_btn_green top_login__btn_vip js_openvip" data-aid="music.pc.20316.newyqqtop" data-stat="music.20316.btnclick.pc" href="javascript:;">开通绿钻豪华版</a>

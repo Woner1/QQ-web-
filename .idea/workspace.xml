@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc30c81-7aeb-4289-b084-52b5d4a3a00b" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/public/image/wave.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/search_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/search_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/new_song/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/new_song/show.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/search/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/search/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/search/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/search/show.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,9 +29,10 @@
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/search/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="423" lean-forward="true" selection-start-line="423" selection-end-line="423" />
+            <state relative-caret-position="112">
+              <caret line="229" column="284" selection-start-line="229" selection-start-column="284" selection-end-line="229" selection-end-column="284" />
               <folding>
+                <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#li#0;n#ul#1;n#div#1;n#div#3;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="e#17578#17711#0#HTML" />
                 <element signature="e#18234#18461#0#HTML" />
                 <element signature="e#18505#18769#0#HTML" />
@@ -87,7 +83,6 @@
       <find>data-singermid</find>
       <find>singer_name</find>
       <find>旅途</find>
-      <find>js_song</find>
       <find>(Live)</find>
       <find>时长</find>
       <find>发布</find>
@@ -104,6 +99,7 @@
       <find>js_pl</find>
       <find>displ</find>
       <find>songlist__song_txt</find>
+      <find>js_song</find>
     </findStrings>
     <dirStrings>
       <dir>D:\project\qq-music</dir>
@@ -386,7 +382,7 @@
       <workItem from="1539871526286" duration="4882000" />
       <workItem from="1539915380702" duration="68000" />
       <workItem from="1540026831624" duration="16332000" />
-      <workItem from="1540082550311" duration="13325000" />
+      <workItem from="1540082550311" duration="13583000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <created>1539011705066</created>
@@ -409,11 +405,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539875717703</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="master">
+      <created>1540096845161</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1540096845161</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205435000" />
+    <option name="totallyTimeSpent" value="205693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -817,9 +820,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/search/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="423" lean-forward="true" selection-start-line="423" selection-end-line="423" />
+        <state relative-caret-position="112">
+          <caret line="229" column="284" selection-start-line="229" selection-start-column="284" selection-end-line="229" selection-end-column="284" />
           <folding>
+            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#li#0;n#ul#1;n#div#1;n#div#3;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="e#17578#17711#0#HTML" />
             <element signature="e#18234#18461#0#HTML" />
             <element signature="e#18505#18769#0#HTML" />

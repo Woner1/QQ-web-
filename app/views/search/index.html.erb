@@ -227,7 +227,7 @@
 
                     <a  class="songlist__icon songlist__icon_mv sprite" rel="noopener" target="_blank" title="MV"><span class="icon_txt">MV</span></a>
 
-                    <span class="songlist__songname_txt"><a  class="js_song" title=""><span class="c_tx_highlight" id="c_tx_highlight<%= i %>"></span> <span class="songlist__song_txt" id="songlist__song_txt<%= i%>"></span></a></span> <span style="display: inline;background: #00800073"><img src="http://y.gtimg.cn/mediastyle/yqq/img/wave.gif"></span>
+                    <span class="songlist__songname_txt"><a  class="js_song" title=""><span class="c_tx_highlight" id="c_tx_highlight<%= i %>"></span> <span class="songlist__song_txt" id="songlist__song_txt<%= i%>"></span></a></span> <span style="display: none;background: #00800073" id="gift<%= i %>"><img src="http://y.gtimg.cn/mediastyle/yqq/img/wave.gif"></span>
 
                     <div class="mod_list_menu">
                       <a  class="list_menu__item list_menu__play js_play" title="播放" id="js_play<%= i %>">
@@ -429,9 +429,10 @@
                var player0=document.getElementById('playera0')
                 if (player0.paused){ /*如果已经暂停*/
                     player0.play(); /*播放*/
-
+                $("#gift0").css("display","inline")
                 }else {
                     player0.pause();/*暂停*/
+                    $("#gift0").css("display","none")
                 }
             })
 
@@ -440,18 +441,24 @@
             if (player1.paused) { /*如果已经暂停*/
                 player1.play();
                 /*播放*/
+                $("#gift1").css("display", "inline")
             } else {
                 player1.pause();
                 /*暂停*/
+                $("#gift1").css("display", "none")
             }
         })
 
         $("#js_play2").click(function () {
-            var player2=document.getElementById('playera2')
-            if (player2.paused){ /*如果已经暂停*/
-                player2.play(); /*播放*/
-            }else {
-                player2.pause();/*暂停*/
+            var player2 = document.getElementById('playera2')
+            if (player2.paused) { /*如果已经暂停*/
+                player2.play();
+                /*播放*/
+                $("#gift2").css("display", "inline")
+            } else {
+                player2.pause();
+                /*暂停*/
+                $("#gift2").css("display", "none")
             }
         })
 
@@ -460,9 +467,11 @@
             if (player3.paused) { /*如果已经暂停*/
                 player3.play();
                 /*播放*/
+                $("#gift3").css("display", "inline")
             } else {
                 player3.pause();
                 /*暂停*/
+                $("#gift3").css("display", "none")
             }
         })
 
@@ -471,9 +480,11 @@
             if (player4.paused) { /*如果已经暂停*/
                 player4.play();
                 /*播放*/
+                $("#gift4").css("display", "inline")
             } else {
                 player4.pause();
                 /*暂停*/
+                $("#gift4").css("display", "none")
             }
         })
 
@@ -482,9 +493,11 @@
             if (player5.paused) { /*如果已经暂停*/
                 player5.play();
                 /*播放*/
+                $("#gift5").css("display", "inline")
             } else {
                 player5.pause();
                 /*暂停*/
+                $("#gift5").css("display", "none")
             }
         })
 
@@ -493,9 +506,11 @@
             if (player6.paused) { /*如果已经暂停*/
                 player6.play();
                 /*播放*/
+                $("#gift6").css("display", "inline")
             } else {
                 player6.pause();
                 /*暂停*/
+                $("#gift6").css("display", "none")
             }
         })
 
@@ -504,9 +519,11 @@
             if (player7.paused) { /*如果已经暂停*/
                 player7.play();
                 /*播放*/
+                $("#gift7").css("display", "inline")
             } else {
                 player7.pause();
                 /*暂停*/
+                $("#gift7").css("display", "none")
             }
         })
 
@@ -515,9 +532,11 @@
             if (player8.paused) { /*如果已经暂停*/
                 player8.play();
                 /*播放*/
+                $("#gift8").css("display", "inline")
             } else {
                 player8.pause();
                 /*暂停*/
+                $("#gift8").css("display", "none")
             }
         })
 
@@ -526,9 +545,11 @@
             if (player9.paused) { /*如果已经暂停*/
                 player9.play();
                 /*播放*/
+                $("#gift9").css("display", "inline")
             } else {
                 player9.pause();
                 /*暂停*/
+                $("#gift9").css("display", "none")
             }
         })
 
@@ -537,9 +558,11 @@
             if (player10.paused) { /*如果已经暂停*/
                 player10.play();
                 /*播放*/
+                $("#gift10").css("display", "inline")
             } else {
                 player10.pause();
                 /*暂停*/
+                $("#gift10").css("display", "none")
             }
         })
 
@@ -548,9 +571,11 @@
             if (player11.paused) { /*如果已经暂停*/
                 player11.play();
                 /*播放*/
+                $("#gift11").css("display", "inline")
             } else {
                 player11.pause();
                 /*暂停*/
+                $("#gift11").css("display", "none")
             }
         })
 
@@ -559,9 +584,11 @@
             if (player12.paused) { /*如果已经暂停*/
                 player12.play();
                 /*播放*/
+                $("#gift12").css("display", "inline")
             } else {
                 player12.pause();
                 /*暂停*/
+                $("#gift12").css("display", "none")
             }
         })
 
@@ -570,9 +597,11 @@
             if (player13.paused) { /*如果已经暂停*/
                 player13.play();
                 /*播放*/
+                $("#gift13").css("display", "inline")
             } else {
                 player13.pause();
                 /*暂停*/
+                $("#gift13").css("display", "none")
             }
         })
 
@@ -581,9 +610,11 @@
             if (player14.paused) { /*如果已经暂停*/
                 player14.play();
                 /*播放*/
+                $("#gift14").css("display", "inline")
             } else {
                 player14.pause();
                 /*暂停*/
+                $("#gift14").css("display", "none")
             }
         })
 
@@ -592,9 +623,11 @@
             if (player15.paused) { /*如果已经暂停*/
                 player15.play();
                 /*播放*/
+                $("#gift15").css("display", "inline")
             } else {
                 player15.pause();
                 /*暂停*/
+                $("#gift15").css("display", "none")
             }
         })
 
@@ -603,9 +636,11 @@
             if (player16.paused) { /*如果已经暂停*/
                 player16.play();
                 /*播放*/
+                $("#gift16").css("display", "inline")
             } else {
                 player16.pause();
                 /*暂停*/
+                $("#gift16").css("display", "none")
             }
         })
 
@@ -614,9 +649,11 @@
             if (player17.paused) { /*如果已经暂停*/
                 player17.play();
                 /*播放*/
+                $("#gift17").css("display", "inline")
             } else {
                 player17.pause();
                 /*暂停*/
+                $("#gift17").css("display", "none")
             }
         })
 
@@ -625,9 +662,11 @@
             if (player18.paused) { /*如果已经暂停*/
                 player18.play();
                 /*播放*/
+                $("#gift18").css("display", "inline")
             } else {
                 player18.pause();
                 /*暂停*/
+                $("#gift18").css("display", "none")
             }
         })
 
@@ -636,9 +675,11 @@
             if (player19.paused) { /*如果已经暂停*/
                 player19.play();
                 /*播放*/
+                $("#gift19").css("display", "inline")
             } else {
                 player19.pause();
                 /*暂停*/
+                $("#gift19").css("display", "none")
             }
         })
     }

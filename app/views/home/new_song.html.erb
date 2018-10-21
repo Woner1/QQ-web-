@@ -1,0 +1,688 @@
+<link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/player.css?max_age=2592000&amp;v=2017323">
+<link rel="stylesheet" type="text/css" href="https://stdl.qq.com/stdl/qqbrowser/floatlayer/css/qb-ie-remind.css?1539484490960">
+<style type="text/css">.emojicon-m {
+  min-height: 1em !important;
+  min-width: 1em !important;
+  max-height: 1em !important;
+  max-width: 1em !important;
+  vertical-align: middle !important;
+  float: none !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  display: inline-block;
+}</style>
+
+<body onunload="document.cookie='yplayer_open=0;path=/;domain=y.qq.com;'" class="os_mac" style="background-color: rgb(192, 32, 32);" rlt="1">
+<h1 class="player_logo">
+  <a href="//y.qq.com/#stat=y_new.player.header.logo" onclick="setStatCookie&amp;&amp;setStatCookie();" rel="noopener" target="_blank"><img class="player_logo__pic" srcset="//y.gtimg.cn/mediastyle/yqq/img/player_logo@2x.png 2x" src="//y.gtimg.cn/mediastyle/yqq/img/player_logo.png" alt="QQ音乐"></a>
+</h1>
+<div class="mod_player_login">
+  <div id="player_login" style="">
+    <a class="player_login__link" href="https://y.qq.com/portal/profile.html#stat=y_new.player.header.user_pic" target="_blank"><img src="http://thirdqq.qlogo.cn/g?b=sdk&amp;k=ytIq8QfPM4CpYVS77CXHOw&amp;s=140&amp;t=1532486576" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null;" class="player_login__cover js_user_img"><img src="//y.gtimg.cn/mediastyle/yqq/img/login_qq.png?max_age=2592000" class="player_login__icon"><span class="player_login__txt">Ankh</span></a>
+    <a href="javascript:;" class="player_login__out js_logout" data-stat="y_new.player.header.logout">退出</a>
+    <a class="player_login__link player_login__link--set js_opts_login" href="javascript:;"><span class="player_login__txt">设置</span></a>
+  </div>
+  <a class="player_login__link player_login__link--unlogin js_login" data-stat="y_new.player.header.login" href="javascript:;" style="display: none;">
+    <span class="player_login__txt">登录</span>
+  </a>
+  <a class="player_login__link player_login__link--set js_opts_unlogin" href="javascript:;" style="display: none;"><span class="player_login__txt">设置</span></a>
+</div>
+
+
+<div class="mod_player">
+  <div class="player__hd"></div>
+  <div class="player__bd">
+    <!-- 默认 -->
+    <div class="player_style_normal js_box js_full_box" style="display:;">
+      <div class="mod_songlist_toolbar">
+        <a href="javascript:;" class="mod_btn js_all_like" data-stat="y_new.player.songlist.loveall"><i class="mod_btn_green__icon_like"></i>收藏<span class="mod_btn__border"></span></a>
+        <a href="javascript:;" class="mod_btn js_all_fav" data-stat="y_new.player.songlist.addall"><i class="mod_btn_green__icon_add"></i>添加到<span class="mod_btn__border"></span></a>
+        <a href="javascript:;" class="mod_btn js_all_down" data-stat="y_new.player.songlist.downloadall"><i class="mod_btn_green__icon_down"></i>下载<span class="mod_btn__border"></span></a>
+        <a href="javascript:;" class="mod_btn js_all_delete" data-stat="y_new.player.songlist.deleteall"><i class="mod_btn_green__icon_delete"></i>删除<span class="mod_btn__border"></span></a>
+        <a href="javascript:;" class="mod_btn js_all_deleted" data-stat="y_new.player.songlist.deleteallonce"><i class="mod_btn_green__icon_clear"></i>清空列表<span class="mod_btn__border"></span></a>
+      </div>
+      <div class="sb_scrollable sb_main sb_viewport">
+
+        <!-- 主要内容_S -->
+        <div class="sb_overview" style="height: 272px;">
+
+          <!-- 编辑模式 mod_songlist--edit -->
+          <div class="mod_songlist mod_songlist--edit">
+            <i class="player_songlist__line"></i>
+            <ul class="songlist__header">
+              <li class="songlist__edit sprite">
+                <input type="checkbox" class="songlist__checkbox js_check_all" data-stat="y_new.player.songlist.checkall">
+              </li>
+              <li class="songlist__header_name">歌曲</li>
+              <li class="songlist__header_author">歌手</li>
+              <li class="songlist__header_time">时长</li>
+            </ul>
+            <i class="player_songlist__line"></i>
+            <ul class="songlist__list" id="song_box">
+              <li mid="217530992" ix="0" data-page="player" data-stat="y_new.player.songlist.dbclick">
+                <div class="songlist__item songlist__item--playing">
+                  <div class="songlist__edit sprite">
+                    <input type="checkbox" class="songlist__checkbox">
+                  </div>
+                  <div class="songlist__number">1</div>
+                  <div class="songlist__songname">
+                    <span class="songlist__songname_txt" title="不想睡的猫">不想睡的猫</span>
+                    <div class="mod_list_menu">
+                      <a href="javascript:;" class="list_menu__item list_menu__play js_play" data-stat="y_new.player.songlist.playone" data-page="player" title="暂停"><i class="list_menu__icon_pause"></i><span class="icon_txt">暂停</span></a>
+                      <a href="javascript:;" class="list_menu__item list_menu__add js_fav" data-stat="y_new.player.songlist.addone" title="添加到歌单" aria-haspopup="true">
+                        <i class="list_menu__icon_add"></i>
+                        <span class="icon_txt">添加到歌单</span>
+                      </a>
+                      <a href="javascript:;" class="list_menu__item list_menu__down js_down" style="display:none;" data-stat="y_new.player.songlist.downloadone" title="下载" aria-haspopup="true">
+                        <i class="list_menu__icon_down"></i>
+                        <span class="icon_txt">下载</span>
+                      </a>
+                      <a href="javascript:;" class="list_menu__item list_menu__share js_share" data-stat="y_new.player.songlist.shareone" title="分享" aria-haspopup="true">
+                        <i class="list_menu__icon_share"></i>
+                        <span class="icon_txt">分享</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="songlist__artist" title="庄心妍">
+
+
+                    <a href="https://y.qq.com/n/yqq/singer/003Cn3Yh16q1MO.html" data-singermid="003Cn3Yh16q1MO" data-singerid="89698" title="庄心妍" data-stat="y_new.player.songlist.singername" class="singer_name" data-page="player">庄心妍</a>
+
+                  </div>
+                  <div class="songlist__time">03:03</div>
+                  <div class="songlist__other">
+
+                  </div>
+                  <a href="javascript:;" class="songlist__delete js_delete" data-page="player" data-stat="y_new.player.songlist.delete" title="删除"><span class="icon_txt">删除</span></a>
+                  <i class="player_songlist__line"></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 主要内容_E -->
+        <!-- 模拟滚动条 S -->
+        <div class="scroll_area sb vertical" style="display:none;">
+          <div class="scroll_bg sb_bg">
+            <div class="scroll_bg_cont sb_bg_cont"></div>
+          </div>
+          <div class="scroll_bar sb_thumb" style="height:0px;">
+            <div class="scroll_bar_cont sb_thumb_cont" style="height:0px;"></div>
+          </div>
+        </div>
+        <!-- 模拟滚动条 E -->
+      </div>
+
+      <div class="mod_song_info" id="song_info">
+        <div class="song_info__info">
+          <a href="javascirpt:;" class="song_info__cover js_album" data-stat="y_new.player.info_area.albumpic">
+            <img src="https://y.gtimg.cn/music/photo_new/T002R300x300M000003NhltT0V7VKu.jpg?max_age=2592000" id="song_pic" alt="" class="song_info__pic">
+          </a>
+          <div class="song_info__name" id="song_name">歌曲名：<a href="https://y.qq.com/n/yqq/song/002LpYBV3X9Ena.html#stat=y_new.player.info_area.songname" onclick="setStatCookie&amp;&amp;setStatCookie();" title="无药可救" target="_blank">无药可救</a>
+          </div>
+          <div class="song_info__singer" id="singer_name">歌手名：<a href="https://y.qq.com/n/yqq/singer/002azErJ0UcDN6.html#stat=y_new.player.info_area.singername" onclick="setStatCookie&amp;&amp;setStatCookie();" title="张杰" class="js_singer" data-stat="y_new.player.info_area.singername" data-singermid="002azErJ0UcDN6" rel="noopener nofollow" target="_blank">张杰</a>
+          </div>
+          <div class="song_info__album" id="album_name">专辑名：<a href="https://y.qq.com/n/yqq/album/003NhltT0V7VKu.html#stat=y_new.player.info_area.albumname" onclick="setStatCookie&amp;&amp;setStatCookie();" title="未·LIVE" target="_blank">未·LIVE</a>
+          </div>
+        </div>
+        <div class="song_info__lyric">
+          <div class="song_info__lyric_box js_lyric_box">
+            <!-- 控制song_info__lyric_inner来做滚动 -->
+            <div class="song_info__lyric_inner qrc_ctn" id="qrc_ctn" data-mod="1"><p data-id="line_null">&nbsp;</p>
+              <p data-id="line_0">无药可救 - 张杰</p>
+              <p data-id="line_1">OA（原词）：Radio Mars 火星电台</p>
+              <p data-id="line_2">OC（原曲）：Andrew Goldstein／JT Roach／Sweet talker</p>
+              <p data-id="line_3">Arranger（编曲）：Andrew Goldstein</p>
+              <p data-id="line_4">Producer（制作人）：Andrew Goldstein/Jason Zhang 张杰／Radio Mars 火星电台</p>
+              <p data-id="line_5">Mixing Engineer（混音工程师）：Andrew Goldstein</p>
+              <p data-id="line_6">Mixing Studio（混音工作室）：Andrew Goldstein Studio</p>
+              <p data-id="line_7">Mastering Engineer（母带工程师）：Ryan Smith</p>
+              <p data-id="line_8">Mastering Studio（母带工作室）：Sterling Sound, New York</p>
+              <p data-id="line_9">Present By（出品）：Planet Culture 张杰行星文化音乐厂牌</p>
+              <p data-id="line_10">湖心月亮覆盖泥沼</p>
+              <p data-id="line_11">倔强的水草 亲吻着船尾</p>
+              <p data-id="line_12">摇橹的人欲盖弥彰</p>
+              <p data-id="line_13">怕一阵呼啸</p>
+              <p data-id="line_14">日夜会颠倒</p>
+              <p data-id="line_15">摆渡人坐稳</p>
+              <p data-id="line_16">彼岸且不问</p>
+              <p data-id="line_17">召唤谁灵魂</p>
+              <p data-id="line_18">得失别计较</p>
+              <p data-id="line_19">答应给明天的一张旧的船票</p>
+              <p data-id="line_20">把过去的都撕掉</p>
+              <p data-id="line_21">堆积在心头的崇拜后的烦恼</p>
+              <p data-id="line_22">逼得偶像要出逃</p>
+              <p data-id="line_23">你的大实话刚刚好</p>
+              <p data-id="line_24">给了我渺小的理由</p>
+              <p data-id="line_25">也许每个百毒不侵的人</p>
+              <p data-id="line_26">曾经都无药可救</p>
+              <p data-id="line_27">我们无药可以救</p>
+              <p data-id="line_28">海港一远一近摇晃</p>
+              <p data-id="line_29">回巢的海鸟 不理会人群</p>
+              <p data-id="line_30">离去的人念念不忘</p>
+              <p data-id="line_31">试过被爱的甜 背叛多凶险</p>
+              <p data-id="line_32">摆渡人坐稳</p>
+              <p data-id="line_33">彼岸且不问</p>
+              <p data-id="line_34">召唤谁灵魂</p>
+              <p data-id="line_35">得失别计较</p>
+              <p data-id="line_36">答应给明天的一张旧的船票</p>
+              <p data-id="line_37">把过去的都撕掉</p>
+              <p data-id="line_38">堆积在心头的崇拜后的烦恼</p>
+              <p data-id="line_39">逼得偶像要出逃</p>
+              <p data-id="line_40">你的大实话刚刚好</p>
+              <p data-id="line_41">给了我渺小的理由</p>
+              <p data-id="line_42">也许每个百毒不侵的人</p>
+              <p data-id="line_43">曾经都无药可救</p>
+              <p data-id="line_44">我们无药可以救</p>
+              <p data-id="line_45">摆渡人坐稳</p>
+              <p data-id="line_46">彼岸且不问</p>
+              <p data-id="line_47">召唤谁灵魂</p>
+              <p data-id="line_48">得失别计较</p>
+              <p data-id="line_49">答应给明天的一张旧的船票</p>
+              <p data-id="line_50">把过去的都撕掉</p>
+              <p data-id="line_51">堆积在心头的崇拜后的烦恼</p>
+              <p data-id="line_52">逼得偶像要出逃</p>
+              <p data-id="line_53">你的大实话刚刚好</p>
+              <p data-id="line_54">给了我渺小的理由</p>
+              <p data-id="line_55">也许每个百毒不侵的人</p>
+              <p data-id="line_56">曾经都无药可救</p>
+              <p data-id="line_57">我们无药可以救</p>
+              <p data-id="line_58">也许每个百毒不侵的人</p>
+              <p data-id="line_59">曾经都无药可救</p>
+              <p data-id="line_60">我们无药可以救</p></div>
+          </div>
+        </div>
+        <a href="javascript:;" class="btn_lang btn_lang--select js_trans_btn" style="display:none;"><i class="icon_txt">开启音译歌词</i></a>
+      </div>
+    </div>
+
+    <!-- 纯净模式 -->
+    <div class="player_style_only js_box js_simp_box" style="display:none;">
+      <div class="mod_only_lyric js_lyric_box">
+        <!-- 控制only_lyric__inner来做滚动 -->
+        <div class="only_lyric__inner qrc_ctn" data-mod="2"><p data-id="line_null">&nbsp;</p>
+          <p data-id="line_0">无药可救 - 张杰</p>
+          <p data-id="line_1">OA（原词）：Radio Mars 火星电台</p>
+          <p data-id="line_2">OC（原曲）：Andrew Goldstein／JT Roach／Sweet talker</p>
+          <p data-id="line_3">Arranger（编曲）：Andrew Goldstein</p>
+          <p data-id="line_4">Producer（制作人）：Andrew Goldstein/Jason Zhang 张杰／Radio Mars 火星电台</p>
+          <p data-id="line_5">Mixing Engineer（混音工程师）：Andrew Goldstein</p>
+          <p data-id="line_6">Mixing Studio（混音工作室）：Andrew Goldstein Studio</p>
+          <p data-id="line_7">Mastering Engineer（母带工程师）：Ryan Smith</p>
+          <p data-id="line_8">Mastering Studio（母带工作室）：Sterling Sound, New York</p>
+          <p data-id="line_9">Present By（出品）：Planet Culture 张杰行星文化音乐厂牌</p>
+          <p data-id="line_10">湖心月亮覆盖泥沼</p>
+          <p data-id="line_11">倔强的水草 亲吻着船尾</p>
+          <p data-id="line_12">摇橹的人欲盖弥彰</p>
+          <p data-id="line_13">怕一阵呼啸</p>
+          <p data-id="line_14">日夜会颠倒</p>
+          <p data-id="line_15">摆渡人坐稳</p>
+          <p data-id="line_16">彼岸且不问</p>
+          <p data-id="line_17">召唤谁灵魂</p>
+          <p data-id="line_18">得失别计较</p>
+          <p data-id="line_19">答应给明天的一张旧的船票</p>
+          <p data-id="line_20">把过去的都撕掉</p>
+          <p data-id="line_21">堆积在心头的崇拜后的烦恼</p>
+          <p data-id="line_22">逼得偶像要出逃</p>
+          <p data-id="line_23">你的大实话刚刚好</p>
+          <p data-id="line_24">给了我渺小的理由</p>
+          <p data-id="line_25">也许每个百毒不侵的人</p>
+          <p data-id="line_26">曾经都无药可救</p>
+          <p data-id="line_27">我们无药可以救</p>
+          <p data-id="line_28">海港一远一近摇晃</p>
+          <p data-id="line_29">回巢的海鸟 不理会人群</p>
+          <p data-id="line_30">离去的人念念不忘</p>
+          <p data-id="line_31">试过被爱的甜 背叛多凶险</p>
+          <p data-id="line_32">摆渡人坐稳</p>
+          <p data-id="line_33">彼岸且不问</p>
+          <p data-id="line_34">召唤谁灵魂</p>
+          <p data-id="line_35">得失别计较</p>
+          <p data-id="line_36">答应给明天的一张旧的船票</p>
+          <p data-id="line_37">把过去的都撕掉</p>
+          <p data-id="line_38">堆积在心头的崇拜后的烦恼</p>
+          <p data-id="line_39">逼得偶像要出逃</p>
+          <p data-id="line_40">你的大实话刚刚好</p>
+          <p data-id="line_41">给了我渺小的理由</p>
+          <p data-id="line_42">也许每个百毒不侵的人</p>
+          <p data-id="line_43">曾经都无药可救</p>
+          <p data-id="line_44">我们无药可以救</p>
+          <p data-id="line_45">摆渡人坐稳</p>
+          <p data-id="line_46">彼岸且不问</p>
+          <p data-id="line_47">召唤谁灵魂</p>
+          <p data-id="line_48">得失别计较</p>
+          <p data-id="line_49">答应给明天的一张旧的船票</p>
+          <p data-id="line_50">把过去的都撕掉</p>
+          <p data-id="line_51">堆积在心头的崇拜后的烦恼</p>
+          <p data-id="line_52">逼得偶像要出逃</p>
+          <p data-id="line_53">你的大实话刚刚好</p>
+          <p data-id="line_54">给了我渺小的理由</p>
+          <p data-id="line_55">也许每个百毒不侵的人</p>
+          <p data-id="line_56">曾经都无药可救</p>
+          <p data-id="line_57">我们无药可以救</p>
+          <p data-id="line_58">也许每个百毒不侵的人</p>
+          <p data-id="line_59">曾经都无药可救</p>
+          <p data-id="line_60">我们无药可以救</p></div>
+      </div>
+      <a href="javascript:;" class="btn_lang btn_lang--select js_trans_btn" style="display:none;"><i class="icon_txt">开启音译歌词</i></a>
+    </div>
+  </div>
+  <div class="player__ft" id="opbanner">
+    <a href="javascript:;" class="btn_big_prev" title="alt+←"><span class="icon_txt">上一首</span></a>
+    <a href="javascript:;" class="btn_big_play" id="btnplay" title="[空格]"><span class="icon_txt">播放</span></a>
+    <a href="javascript:;" class="btn_big_next" title="alt+→"><span class="icon_txt">下一首</span></a>
+    <div class="player_music">
+      <div class="player_music__info" id="sim_song_info">
+        <a href="https://y.qq.com/n/yqq/song/002LpYBV3X9Ena.html#stat=y_new.player.info_area.songname" onclick="setStatCookie&amp;&amp;setStatCookie();" title="无药可救" class="js_song" data-stat="y_new.player.info_area.songname" data-mid="002LpYBV3X9Ena" data-id="217530992" data-songtype="0" data-disstid="" rel="noopener nofollow" target="_blank">无药可救</a>
+        -
+        <a href="https://y.qq.com/n/yqq/singer/002azErJ0UcDN6.html#stat=y_new.player.info_area.singername" onclick="setStatCookie&amp;&amp;setStatCookie();" title="张杰" class="js_singer" data-stat="y_new.player.info_area.singername" data-singermid="002azErJ0UcDN6" rel="noopener nofollow" target="_blank">张杰</a>
+      </div>
+      <div class="player_music__time" id="time_show"></div>
+      <div class="player_progress" id="progress">
+        <div class="player_progress__inner" id="spanplayer_bgbar" title="[快进ctrl+alt+→][快退ctrl+alt+←]">
+          <div class="player_progress__load" id="downloadbar" style="width:0%;"></div>
+          <div class="player_progress__play" style="width:0%;" id="spanplaybar">
+            <i class="player_progress__dot" id="spanprogress_op"></i></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <a href="javascript:;" class="btn_big_style_list" id="play_mod" title="列表循环[O]"><span class="icon_txt">列表循环[O]</span></a>
+    </div>
+    <a href="javascript:;" class="btn_big_like js_btn_fav" title="喜欢[V]"><span class="icon_txt">喜欢[V]</span></a>
+    <a href="javascript:;" class="btn_big_down js_btn_down" title="下载[D]"><span class="icon_txt">下载[D]</span></a>
+    <a class="mod_btn_comment js_into_comment btn_comment99" data-stat="y_new.player.gotocomment" href="https://y.qq.com/n/yqq/song/002LpYBV3X9Ena.html#comment_box" style="" target="_blank"><span class="btn_comment__numbers"><i class="btn_comment__numb btn_comment__numb_9"></i><i class="btn_comment__numb btn_comment__numb_9"></i><i class="btn_comment__numb btn_comment__numb_9"></i><i class="btn_comment__numb btn_comment__numb_add"></i></span><span class="icon_txt">评论</span></a>
+    <a href="javascript:;" class="btn_big_only" id="simp_btn" title="打开纯净模式[C]"><span class="icon_txt">打开纯净模式[C]</span></a>
+    <!-- <a href="javascript:;" class="btn_big_only btn_big_only--on"><span class="icon_txt">关闭纯净模式</span></a> -->
+    <div class="player_progress player_voice" id="voice">
+      <a href="javascript:;" class="btn_big_voice" id="spanmute" title="关闭声音[M]"><span class="icon_txt">关闭声音[M]</span></a>
+      <!-- <a href="javascript:;" class="btn_big_voice btn_big_voice--no"><span class="icon_txt">打开声音</span></a> -->
+      <div class="player_progress__inner" id="spanvolume" title="调节音量 [增大alt+↑][减小alt+↓]">
+        <div class="player_progress__play" style="width: 31%;" id="spanvolumebar">
+          <i class="player_progress__dot" id="spanvolumeop"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="bg_player_mask"></div>
+<div class="bg_player" style="background-image: url(&quot;https://y.gtimg.cn/music/photo_new/T002R300x300M000003NhltT0V7VKu.jpg?max_age=2592000&quot;);" id="backImg"></div>
+
+
+
+
+<a href="javascript:;" class="btn_bottom_feedback js_btn_feedback" style="display:none;"></a>
+<div id="divdialog_0"></div>
+<audio id="h5audio_media" height="0" width="0" autoplay="false"></audio>
+<audio src="http://dl.stream.qqmusic.qq.com/C400003mAan70zUy5O.m4a?guid=1962875112&amp;vkey=6BE4E27F822572294D7150BF832756E9A28FEE480E2AE38376FAD2153E10494B06A20D06A603A2FC8827BBABD8B7D59C4C953DBC0135034D&amp;uin=0&amp;fromtag=3&amp;r=2377263186014842" autoplay="" preload="load"></audio>
+<audio src="http://isure.stream.qqmusic.qq.com/C400003mAan70zUy5O.m4a?guid=1962875112&amp;vkey=6BE4E27F822572294D7150BF832756E9A28FEE480E2AE38376FAD2153E10494B06A20D06A603A2FC8827BBABD8B7D59C4C953DBC0135034D&amp;uin=0&amp;fromtag=3&amp;r=6842769990031479" autoplay="" preload="load"></audio>
+<audio src="http://183.232.248.14/amobile.music.tc.qq.com/C400003mAan70zUy5O.m4a?guid=1962875112&amp;vkey=6BE4E27F822572294D7150BF832756E9A28FEE480E2AE38376FAD2153E10494B06A20D06A603A2FC8827BBABD8B7D59C4C953DBC0135034D&amp;uin=0&amp;fromtag=3&amp;r=43994784477094706" autoplay="" preload="load"></audio>
+<audio src="http://183.232.248.15/amobile.music.tc.qq.com/C400003mAan70zUy5O.m4a?guid=1962875112&amp;vkey=6BE4E27F822572294D7150BF832756E9A28FEE480E2AE38376FAD2153E10494B06A20D06A603A2FC8827BBABD8B7D59C4C953DBC0135034D&amp;uin=0&amp;fromtag=3&amp;r=5302130286971825" autoplay="" preload="load"></audio>
+<audio src="http://183.232.248.16/amobile.music.tc.qq.com/C400003mAan70zUy5O.m4a?guid=1962875112&amp;vkey=6BE4E27F822572294D7150BF832756E9A28FEE480E2AE38376FAD2153E10494B06A20D06A603A2FC8827BBABD8B7D59C4C953DBC0135034D&amp;uin=0&amp;fromtag=3&amp;r=04758262192234031" autoplay="" preload="load"></audio>
+</body>
+
+
+
+
+
+
+
+<script>
+    //获取传过来的index页面传过来id
+    console.log(window.location.href);
+    var str = window.location.href;
+    var index = str.lastIndexOf("\/");
+    str = str.substring(index + 1, str.length);
+    var id = str
+
+
+    //   新歌首发
+    $.ajax({
+        url: "https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=27&_=1519963122923",
+        type: "get",
+        dataType: 'jsonp',
+        cache: false,
+        async: false,   // 太关键了，学习了，同步和异步的参数
+        jsonp: "jsonpCallback",
+        scriptCharset: 'GBK',//解决中文乱码
+        success: function (data) {
+            //最新音乐数据
+            var cur_song_num = data.cur_song_num; //获取最新歌曲的长度
+            console.log(data);
+
+            //console.log(data.songlist[i].data.albumname);
+            //console.log(i);
+            //获取图片的mid
+            var albummid = data.songlist[id].data.albummid;
+            $("#image").attr('src', "https://y.gtimg.cn/music/photo_new/T002R300x300M000" + albummid + ".jpg?max_age=2592000");
+            $("#image").attr('alt', data.songlist[id].data.albumname);
+
+            //获取歌曲名字
+            //document.getElementById("demo" + i).innerHTML = data.songlist[i].data.albumname;
+            $("#title").html(data.songlist[id].data.albumname);
+            $("#title").attr('title', data.songlist[id].data.albumname);
+            //
+            //
+            //     //当鼠标移到歌曲封面显示歌曲名字
+            //     $("#title_songname" + id).attr("title", data.songlist[i].data.albumname)
+            //
+            //获取歌手的名字
+            $("#singername").html(data.songlist[id].data.singer[0].name);
+            $("#singername").attr('title', data.songlist[id].data.singer[0].name);
+            //获取专辑的名字
+
+            $("#albumname").html(data.songlist[id].data.albumname);
+            $("#albumname").attr('title', data.songlist[id].data.albumname);
+
+            //console.log(data.songlist[id].data.songmid);
+            var songmid = data.songlist[id].data.songmid;
+            $("#songmid").attr('title', songmid);
+
+
+            var songmids = $("#songmid").attr('title');
+
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    });
+
+
+</script>
+
+//获取歌词
+<script>
+    function f() {
+
+
+        var songmid = $("#songmid").attr('title');
+
+        var url_song = "https://route.showapi.com/213-2?showapi_appid=54411&showapi_sign=55b7ca99e210452a86269a9f09def34c&musicid=" + songmid + "";
+        $.ajax({
+            url: url_song,
+            type: "get",
+            dataType: 'json',
+
+            scriptCharset: 'GBK',//解决中文乱码
+            success: function (data) {
+                //获取歌词
+                // console.log(data.showapi_res_body.lyric);
+                //console.log(data.showapi_res_body.lyric_txt);
+                var s = data.showapi_res_body.lyric;
+                $("#lyric").text(s);
+
+                if (typeof binlyric != 'object') {
+                    binlyric = {};
+                }
+                binlyric = {
+                    edition: "1.1",
+                    obj: "",
+                    lyricCSS: new Object(),
+                    txt: "",
+                    index: 0,
+                    time: new Array(),
+                    lyric: new Array(),
+                    sort: function () { // 冒泡排序（从小到大）
+                        var third;
+                        for (var j = 0; j < this.index - 1; j++) {
+                            for (var i = 0; i < this.index - 1; i++) {
+                                if (this.time[i] > this.time[i + 1]) {
+                                    third = this.time[i];
+                                    this.time[i] = this.time[i + 1];
+                                    this.time[i + 1] = third;
+                                    third = this.lyric[i];
+                                    this.lyric[i] = this.lyric[i + 1];
+                                    this.lyric[i + 1] = third;
+                                }
+                            }
+                        }
+                    },
+                    createPanel: function () { // 创建歌词面板
+                        var i = 0;
+                        $(this.obj).html("");
+                        for (i = 0; i < this.index; i++) {
+                            $(this.obj).append("<div>" + this.lyric[i] + "</div>");
+                        }
+                        for (i in this.lyricCSS) {
+                            $(this.obj).find("div").css(this.lyricCSS, this.lyricCSS[i]);
+                        }
+                    },
+                    findTags: function (index, strArray, number) { // 查找标签（包括任何扩展的标签）
+                        // 此方法能匹配所有格式的标签
+                        // 因为此方法是在后面写的，所以时间标签并没有使用此方法
+                        number = number || this.txt.length;
+                        number = (number > this.txt.length) ? this.txt.length : number;
+                        var i, j, complete = 0, value;
+                        var obj = new Object();
+                        obj.booble = false;
+                        obj.value = "[";
+                        for (i = index; i < number; i++) {
+                            if (this.txt.substr(i, 1) == strArray[complete].s) {
+                                complete += 1;
+                                if (complete > 1) {
+                                    if (complete < strArray.length) {
+                                        obj.value += '{value:"' + this.txt.substr(value + 1, i - value - 1) + '"},';
+                                    }
+                                    else {
+                                        obj.value += '{value:"' + this.txt.substr(value + 1, i - value - 1) + '"}]';
+                                    }
+                                }
+                                if (complete == strArray.length) {
+                                    obj.txt = this.txt.substr(index, i - index + 1);
+                                    obj.value = eval('(' + obj.value + ')');
+                                    obj.index = i + 1;
+                                    obj.booble = true;
+                                    break
+                                }
+                                value = i;
+                            }
+                            else if (this.txt.substr(i, 1) == "\n") {
+                                obj.booble = false;
+                                return obj;
+                            }
+                            else if (this.txt.substr(i, 1) == strArray[0].s && complete > 0) // 遇到2次开始标志就退出
+                            {
+                                obj.booble = false;
+                                return obj;
+                            }
+                        }
+                        return obj;
+                    },
+                    findlyric: function (index) { // 查找歌词： 有则返回 歌词、继续查找的位置， 否则只返回继续查找的位置
+                        var obj = {};
+                        var str = this.txt;
+                        var i;
+                        for (i = index; i < str.length; i++) {
+                            if (str.charAt(i) == "[") {
+                                var _obj = this.findTags(i, [{s: "["}, {s: ":"}, {s: "]"}]);
+                                if (_obj.booble) {
+                                    obj.index = i;//i + _obj.txt.length;
+                                    obj.lyric = str.substr(index, i - index);
+                                    return obj;
+                                }
+                            }
+                            else if (str.charAt(i) == "\n") {
+                                obj.index = i + 1;
+                                obj.lyric = str.substr(index, i - index);
+                                return obj
+                            }
+                        }
+                        if (i == str.length) // 专处理最后一句歌词（最后一句歌词比较特殊）
+                        {
+                            obj.index = i + 1;
+                            obj.lyric = str.substr(index, i - index);
+                            return obj;
+                        }
+                        obj.index = i;
+                        return obj;
+                    },
+                    findTime: function (index) { // 查找时间 ： 有则返回 时间、继续查找的位置， 否则只返回继续查找的位置
+                        // 此功能可以用 findTags 方法实现，更简单、更强大、代码更少
+                        // findTags方法 是在后面写的，所以这里就不改了，具体可参考 findID方法里的使用实例
+                        var obj = {};
+                        var thisobj = this;
+                        var str = this.txt;
+                        obj.index = index;
+
+                        function recursion() {
+                            var _obj = thisobj.findTime(obj.index);
+                            if (_obj.time) {
+                                obj.time += _obj.time;
+                                obj.index = _obj.index;
+                            }
+                        }
+
+                        // --------------- 可以在这里 扩展 其它功能 ---------------
+                        // lrc歌词只能精确到每句歌词，可以通过扩展lrc 精确 到 每个字
+                        if (/\[\d{1,2}\:\d{1,2}\.\d{1,2}\]/.test(str.substr(index, 10))) // [mm:ss.ff]
+                        {
+                            obj.time = str.substr(index + 1, 8) + "|";
+                            obj.index = index + 9 + 1;
+                            recursion();
+                        }
+                        else if (/\[\d{1,2}\:\d{1,2}\]/.test(str.substr(index, 7))) // [mm:ss]
+                        {
+                            obj.time = str.substr(index + 1, 5) + ".00" + "|";
+                            obj.index = index + 6 + 1;
+                            recursion();
+                        }
+                        // 以下标签均属于合法标签，但很少被使用，请根据需要进行扩展
+                        // [mm:ss.f] [mm:s.ff] [mm:s.f] [m:ss.ff] [m:s.ff] [m:s.f]
+                        // [mm:s] [m:ss] [s:s]
+                        return obj;
+                    },
+                    findID: function (index) { // 查找预定义标识
+                        //[ar:艺人名]
+                        //[ti:曲名]
+                        //[al:专辑名]
+                        //[by:编者（指编辑LRC歌词的人）]
+                        //[offset:时间补偿值] 其单位是毫秒，正值表示整体提前，负值相反。这是用于总体调整显示快慢的。（很少被使用）
+                        // 注：本程序也不支持 offset 功能（但是能取值），如需要 请自行在 sort 方法添加此功能
+                        // 此处功能 使用 findTags方法 实现
+                        var obj;
+                        obj = this.findTags(index, [{s: "["}, {s: ":"}, {s: "]"}]);
+                        if (obj.booble) {
+                            if (obj.value[0].value == "ar") {
+                                this.ar = obj.value[1].value;
+                            }
+                            else if (obj.value[0].value == "ti") {
+                                this.ti = obj.value[1].value;
+                            }
+                            else if (obj.value[0].value == "al") {
+                                this.al = obj.value[1].value;
+                            }
+                            else if (obj.value[0].value == "by") {
+                                this.by = obj.value[1].value;
+                            }
+                            else if (obj.value[0].value == "offset") // 这里是 offset 的值
+                            {
+                                this.offset = obj.value[1].value;
+                            }
+                        }
+                    },
+                    analysis: function () { // 解析
+                        if (this.txt == "") return false;
+                        var str = this.txt;
+                        this.index = 0;
+                        for (var i = 0; i < str.length; i++) {
+                            if (str.charAt(i) == "[") {
+                                var time = this.findTime(i);
+                                if (time.time) // 时间标签
+                                {
+                                    var lyric = this.findlyric(time.index);
+                                    if (lyric.lyric != "\n" && lyric.lyric != "") // 去掉无意义歌词
+                                    {
+                                        var timeArray = time.time.split("|");
+                                        for (var j = 0; j < timeArray.length; j++) {
+                                            if (timeArray[j]) {
+                                                this.time[this.index] = timeArray[j];
+                                                this.lyric[this.index] = lyric.lyric;
+                                                this.index += 1;
+                                            }
+                                        }
+                                    }
+                                    i = time.index;
+                                }
+                                else // 预定义标签
+                                {
+                                    this.findID(i);
+                                }
+                            }
+                        }
+                        this.sort();
+                        this.createPanel();
+                    },
+                    play: function (position, CSS) { // 定位指定时间的歌词
+                        var time;
+                        var obj = this;
+
+                        function set(index) {
+                            var height = parseInt($(obj.obj).find("div").css("height"));
+                            var top = parseInt($(obj.obj).find("div").css("margin-top"));
+                            $(obj.obj).animate({
+                                scrollTop: (index * height + index * top - parseInt($(obj.obj).css("height")) / 2 + height / 2)
+                            }, 300);
+                            for (var i in CSS) {
+                                $(obj.obj).find("div").eq(index).css(CSS, CSS[i]);
+                            }
+                        }
+
+                        for (var i = 0; i < this.index; i++) {
+                            if (position == this.time[i]) {
+                                Set(i);
+                                return;
+                            }
+                            else if (position > this.time[i]) {
+                                time = i;
+                            }
+                        }
+                        set(time);// 没找到匹配时间 则就近最小选择
+                    }
+                };
+
+                binlyric.txt = s;
+                binlyric.obj = ".lyric__cont_box";
+                binlyric.lyricCSS = {"font-size": "12px", "margin-top": "1px", "text-align": "left"};
+                binlyric.analysis();
+                binlyric.play("00:00.01", {
+                    color: "red"
+                });
+                // alert("艺人名："+binlyric.ar);
+                // alert("专辑名："+binlyric.al);
+                // alert("歌词编者："+binlyric.by);
+                // alert("歌曲名："+binlyric.ti);
+                console.log(s)
+
+                // $("#lyric").toggle();
+
+
+            }, error: function (e) {
+                console.log(e);
+            }
+        });
+
+        function parseLyric(text) {
+            var lyrics = text.split('\r\n');
+            var lrcObj = {};
+            for (var i = 0; i < lyrics.length; i++) {
+                var lyric = decodeURIComponent(lyrics[i]);
+                var timeReg = /\[\d*:\d*((\.|\:)\d*)*\]/g;
+                var timeRegExpArr = lyric.match(timeReg);
+                if (!timeRegExpArr) continue;
+                var clause = lyric.replace(timeReg, '');
+                for (var k = 0, h = timeRegExpArr.length; k < h; k++) {
+                    var t = timeRegExpArr[k];
+                    var min = Number(String(t.match(/\[\d*/i)).slice(1)),
+                        sec = Number(String(t.match(/\:\d*/i)).slice(1));
+                    var time = min * 60 + sec;
+                    lrcObj[time] = clause;
+                }
+            }
+            return lrcObj;
+            console.log(lrcObj)
+        }
+    }
+
+</script>

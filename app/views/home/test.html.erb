@@ -3,7 +3,7 @@
 
 
 
-<!--<button id="play">播放</button>-->
+<button id="play">播放</button>
 <!--<button id="pause">暂停</button>-->
 <button id="next">下一首</button>
 <button id="pre">上一首</button>
@@ -19,6 +19,9 @@
 
 <button id="random">随机推荐的音乐</button>
 <button id="top">根据榜单ID获得榜单的歌曲列表</button>
+<button id="singer">歌手</button>
+<button id="geci">歌词</button>
+<button id="pai">排行</button>
 <br>
 <br>
 
@@ -54,7 +57,9 @@
     // console.log(player.duration);
     // console.log(player.version);
 
-
+    document.getElementById("play").onclick = function () {
+        player.play("001OyHbk2MSIi4");
+    }
     document.getElementById("pause").onclick = function () {
         player.pause();
     }
@@ -172,7 +177,7 @@
     }
     //推荐音乐
     document.getElementById("random").onclick = function () {
-        let url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8¬ice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=36&_=1520777874472';
+        let url = 'https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?g_tk=5381';
         $.ajax({
             url: url,
             type: "get",
@@ -209,5 +214,75 @@
         });
     }
 
+    //根据歌手singermid查他的所有歌曲
+    document.getElementById("singer").onclick = function () {
+        var singermid="003Nz2So3XXYek"
+        let url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&inCharset=utf-8&outCharset=utf-8&notice=0&format=jsonp&hostUin=0&needNewCode=0&platform=yqq&order=listen&begin=0&num=40&songstatus=1&singermid='+singermid+'';
+        $.ajax({
+            url: url,
+            type: "get",
+            // async:false,
+            dataType: 'jsonp',
+            jsonp: "jsonpCallback",
+            success: function (data) {
+                // var json = data.data.song;
+                //root.song = json.list;
+                console.log(data);
 
+            },
+            error: function (e) {
+                console.log('error');
+            }
+        });
+    }
+
+
+    //歌词
+
+    document.getElementById("geci").onclick = function () {
+        var songMid = "000B9Nho3hgIY7"
+        let url = 'https://route.showapi.com/213-2?showapi_appid=54411&showapi_sign=55b7ca99e210452a86269a9f09def34c&musicid='+songMid+'';
+        $.ajax({
+            url: url,
+            type: "get",
+            // async:false,
+            dataType: 'json',
+
+            success: function (data) {
+                // var json = data.data.song;
+                //root.song = json.list;
+                console.log(data);
+
+            },
+            error: function (e) {
+                console.log('error');
+            }
+        });
+    }
+
+
+
+
+    //排行榜
+    document.getElementById("pai").onclick = function () {
+
+        let url = 'https://c.y.qq.com/v8/fcg-bin/fcg_myqq_toplist.fcg?g_tk=1928093487&inCharset=utf-8&outCharset=utf-8&notice=0&format=jsonp&uin=0&needNewCode=1&platform=h5';
+        $.ajax({
+            url: url,
+            type: "get",
+            // async:false,
+            dataType: 'jsonp',
+            jsonp: "jsonpCallback",
+
+            success: function (data) {
+                // var json = data.data.song;
+                //root.song = json.list;
+                console.log(data);
+
+            },
+            error: function (e) {
+                console.log('error');
+            }
+        });
+    }
 </script>

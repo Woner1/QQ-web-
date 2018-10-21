@@ -1,0 +1,690 @@
+
+<script src="https://y.gtimg.cn/music/h5/client/jsbridge.js?max_age=2592000"></script>
+<link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/player.css?max_age=2592000&amp;v=2017323">
+<link rel="stylesheet" type="text/css" href="https://stdl.qq.com/stdl/qqbrowser/floatlayer/css/qb-ie-remind.css?1539484490960">
+<link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/layout.css?max_age=25920000&amp;v=20180803">
+<link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/search20180104.css?max_age=2592000&amp;v=20180104">
+<link rel="stylesheet" type="text/css" href="https://stdl.qq.com/stdl/qqbrowser/floatlayer/css/qb-ie-remind.css?1539786040041">
+<style type="text/css">.emojicon-m {
+  min-height: 1em !important;
+  min-width: 1em !important;
+  max-height: 1em !important;
+  max-width: 1em !important;
+  vertical-align: middle !important;
+  float: none !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  display: inline-block;
+}
+
+.songlist__list {
+  display: inline-block;
+  width: 263%;
+}
+</style>
+
+
+
+
+
+
+<%= render :partial => "layouts/title" %>
+
+
+<!-- 大搜索框区域 S -->
+<div class="mod_search" style="background-image:url(//y.gtimg.cn/mediastyle/yqq/img/bg_search.jpg);" role="search">
+  <div class="mod_search_input">
+
+    <%= form_tag search_index_path, :method => :get do %>
+      <%= text_field_tag :search, params[:search], class: "search_input__input", placeholder: "请输入搜索内容" %>
+      <button class="search_input__btn"><i class="icon_search sprite"></i><%= submit_tag '搜索', class: "icon_txt" %>
+      </button>
+    <% end %>
+
+
+  </div>
+  <div class="mod_search_tips">热门搜索：<a href="javascript:;" class="search_tips__item js_smartbox_search" data-name="沙漠骆驼">沙漠骆驼</a><a href="javascript:;" class="search_tips__item js_smartbox_search" data-name="可不可以">可不可以</a><a href="javascript:;" class="search_tips__item js_smartbox_search" data-name="地铁等待">地铁等待</a><a href="javascript:;" class="search_tips__item js_smartbox_search" data-name="一百万个可能">一百万个可能</a><a href="javascript:;" class="search_tips__item js_smartbox_search" data-name="38度6">38度6</a>
+  </div>
+  <div class="js_smartbox">
+    <div class="mod_search_other" style="">
+      <div class="search_hot">
+        <dl class="search_hot__list" aria-labelledy="search_hot__tit">
+          <dt class="search_hot__tit">热门搜索</dt>
+          <dd>
+
+          </dd>
+
+        </dl>
+      </div>
+
+      <div class="search_history">
+        <dl class="search_history__list">
+          <dt class="search_history__tit">搜索历史<a href="javascript:;" class="search_history__clear js_smartbox_delete_all"><i class="icon_history_clear"></i><span class="icon_txt">清空</span></a>
+          </dt>
+
+          <dd class="search_history__item">
+            <a href="javascript:;" class="search_history__link js_smartbox_search js_left" data-name="旅途">旅途</a>
+            <a href="javascript:;" class="search_history__delete js_smartbox_delete" data-name="旅途" title="删除"><i class="search_history__icon_delete"></i><span class="icon_txt">删除</span></a>
+          </dd>
+
+          <dd class="search_history__item">
+            <a href="javascript:;" class="search_history__link js_smartbox_search js_left" data-name="周杰伦">周杰伦</a>
+            <a href="javascript:;" class="search_history__delete js_smartbox_delete" data-name="周杰伦" title="删除"><i class="search_history__icon_delete"></i><span class="icon_txt">删除</span></a>
+          </dd>
+
+          <dd class="search_history__item">
+            <a href="javascript:;" class="search_history__link js_smartbox_search js_left" data-name="可不可以">可不可以</a>
+            <a href="javascript:;" class="search_history__delete js_smartbox_delete" data-name="可不可以" title="删除"><i class="search_history__icon_delete"></i><span class="icon_txt">删除</span></a>
+          </dd>
+
+        </dl>
+      </div>
+    </div>
+    <div class="mod_search_result" style="">
+
+      <!--单曲区域_S-->
+      <div class="search_result__sort">
+        <h4 class="search_result__tit"><i class="search_result__icon_song"></i>单曲</h4>
+        <ul class="search_result__list">
+
+          <li>
+            <a href="javascript:;" class="search_result__link js_smartbox_song" data-docid="103464" data-id="103464" data-mid="002NJzdk2JLUIn" data-name="旅途">
+              <span class="search_result__name"><span class="search_result__keyword">旅途</span></span>-
+              <span class="search_result__singer">汪峰</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="javascript:;" class="search_result__link js_smartbox_song" data-docid="213743997" data-id="213743997" data-mid="001B4T7X4X5HDo" data-name="旅途">
+              <span class="search_result__name"><span class="search_result__keyword">旅途</span></span>-
+              <span class="search_result__singer">朴树</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="javascript:;" class="search_result__link js_smartbox_song" data-docid="101132970" data-id="101132970" data-mid="002RhvL501thz2" data-name="旅途·故乡">
+              <span class="search_result__name"><span class="search_result__keyword">旅途</span>·故乡</span>-
+              <span class="search_result__singer">齐栾</span>
+            </a>
+          </li>
+
+          <li>
+            <a  class="search_result__link js_smartbox_song" data-docid="105719766" data-id="105719766" data-mid="002MRYfm4G4i6g" data-name="旅途">
+              <span class="search_result__name"><span class="search_result__keyword">旅途</span></span>-
+              <span class="search_result__singer">老狼</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <!--单曲区域_E-->
+
+
+      <!--专辑区域_S-->
+      <div class="search_result__sort">
+        <h4 class="search_result__tit"><i class="search_result__icon_album"></i>专辑</h4>
+        <ul class="search_result__list">
+
+          <li>
+            <a href="javascript:;" class="search_result__link js_smartbox_album" data-docid="116639" data-id="116639" data-mid="004TbdIb1iWKox" data-name="旅途狂欢">
+              <span class="search_result__name"><span class="search_result__keyword">旅途</span>狂欢</span>
+              <span class="search_result__singer">华语群星</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="javascript:;" class="search_result__link js_smartbox_album" data-docid="49754" data-id="49754" data-mid="004dZTEM1yOL3O" data-name="旅途 愉快">
+              <span class="search_result__name"><span class="search_result__keyword">旅途</span> 愉快</span>
+              <span class="search_result__singer">郭富城</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <!--专辑区域_E-->
+
+
+      <!--MV区域_S-->
+      <div class="search_result__sort">
+        <h4 class="search_result__tit"><i class="search_result__icon_mv"></i>MV</h4>
+        <ul class="search_result__list">
+
+          <li>
+            <a href="javascript:;" class="search_result__link js_smartbox_mv" data-docid="1435004" data-id="1435004" data-mid="002Vxy1z0EBOCi" data-name="旅途" data-vid="k0025u1kq2f">
+              <span class="search_result__name"><span class="search_result__keyword">旅途</span></span>-
+              <span class="search_result__singer">朴树</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="javascript:;" class="search_result__link js_smartbox_mv" data-docid="674556" data-id="674556" data-mid="001Ufklp2nTwIy" data-name="旅途" data-vid="f00199ugt7f">
+              <span class="search_result__name"><span class="search_result__keyword">旅途</span></span>-
+              <span class="search_result__singer">老狼</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <!--MV区域_E-->
+    </div>
+  </div>
+</div>
+
+<!-- 大搜索框区域 E -->
+<div class="main" style="">
+  <div class="main__inner">
+    <!--搜索结果 S-->
+    <div class="result">
+      <!--直达区 S-->
+      <div class="mod_intro mod_intro_singer" id="zhida_singer" style="display: none;">
+      </div>
+      <div class="mod_intro mod_intro_album" id="zhida_album" style="display:none;">
+      </div>
+      <!--直达区 E-->
+      <!--结果导航 S-->
+      <div class="mod_tab" role="nav">
+        <a class="mod_tab__item js_tab mod_tab__current" href="javascript:;" data-tab="song">单曲</a>
+        <a class="mod_tab__item js_tab" href="javascript:;" data-tab="album">专辑</a>
+        <a class="mod_tab__item js_tab" href="javascript:;" data-tab="mv">MV</a>
+        <a class="mod_tab__item js_tab" href="javascript:;" data-tab="playlist">歌单</a>
+        <a class="mod_tab__item js_tab" href="javascript:;" data-tab="user">用户</a>
+        <a class="mod_tab__item js_tab" href="javascript:;" data-tab="lyric">歌词</a>
+      </div>
+      <!--结果导航 E-->
+      <!--结果列表 S-->
+      <!-- 单曲 -->
+      <div class="js_search_tab_cont search_tab_cont" id="song_box" style="display: block;">
+        <div class="mod_songlist_toolbar">
+          <a href="javascript:;" class="mod_btn js_all_play"><i class="mod_btn__icon_play"></i>播放全部</a>
+          <a href="javascript:;" class="mod_btn js_all_fav"><i class="mod_btn__icon_add"></i>添加到</a>
+          <a href="javascript:;" class="mod_btn js_all_down"><i class="mod_btn__icon_down"></i>下载</a>
+          <a href="javascript:;" class="mod_btn js_batch"><i class="mod_btn__icon_batch"></i>批量操作</a>
+        </div>
+        <div class="mod_songlist">
+          <ul class="songlist__header">
+            <li class="songlist__edit songlist__edit--check sprite">
+              <input type="checkbox" class="songlist__checkbox js_check_all">
+            </li>
+            <li class="songlist__header_name">歌曲</li>
+            <li class="songlist__header_author">歌手</li>
+            <li class="songlist__header_album">专辑</li>
+            <li class="songlist__header_time" title="">发布</li>
+          </ul>
+          <ul class="songlist__list">
+            <% for i in 0..19 %>
+              <li class="" mid="105719766" ix="20">
+                <!--
+                hover : songlist__item--hover
+                偶数行：songlist__item--even
+                -->
+                <div class="songlist__item" onmouseover="this.className=(this.className+' songlist__item--hover')" onmouseout="this.className=this.className.replace(/ songlist__item--hover/, '')">
+                  <div class="songlist__edit songlist__edit--check sprite">
+                    <input type="checkbox" class="songlist__checkbox">
+                  </div>
+                  <div class="songlist__songname">
+
+
+                    <a  class="songlist__icon songlist__icon_mv sprite" rel="noopener" target="_blank" title="MV"><span class="icon_txt">MV</span></a>
+
+                    <span class="songlist__songname_txt"><a  class="js_song" title=""><span class="c_tx_highlight" id="c_tx_highlight<%= i %>"></span> <span class="songlist__song_txt" id="songlist__song_txt<%= i%>"></span></a></span> <span style="display: none;background: #00800073" id="gift<%= i %>"><img src="http://y.gtimg.cn/mediastyle/yqq/img/wave.gif"></span>
+
+                    <div class="mod_list_menu">
+                      <a  class="list_menu__item list_menu__play js_play" title="播放" id="js_play<%= i %>">
+                        <i class="list_menu__icon_play" id="list_menu__icon_play<%= i %>" ></i>
+                        <span class="icon_txt" id="icon_txt<%= i %>">播放</span>
+                        <audio id="playera<%= i %>"  loop="loop"/>
+                      </a>
+
+
+
+
+                      <a href="javascript:;" class="list_menu__item list_menu__add js_fav" title="添加到歌单" aria-haspopup="true">
+                        <i class="list_menu__icon_add"></i>
+                        <span class="icon_txt">添加到歌单</span>
+                      </a>
+                      <a href="javascript:;" class="list_menu__item list_menu__down js_down" title="下载" aria-haspopup="true">
+                        <i class="list_menu__icon_down"></i>
+                        <span class="icon_txt">下载</span>
+                      </a>
+                      <a href="javascript:;" class="list_menu__item list_menu__share js_share" title="分享" aria-haspopup="true">
+                        <i class="list_menu__icon_share"></i>
+                        <span class="icon_txt">分享</span>
+                      </a>
+                    </div>
+                  </div>
+
+
+                  <div class="songlist__artist" title="老狼">
+
+
+                    <a  data-singermid="002WkEWV1TA75B" data-singerid="212" title="" class="singer_name" id="singer_name<%= i %>"></a>
+
+                  </div>
+                  <div class="songlist__album">
+                    <a data-albummid="004OIsn73g0H8p" data-albumid="1301623" title="" class="album_name" id="album_name<%= i %>"></a>
+                  </div>
+                  <div class="songlist__time" id="songlist__time<%= i %>">05:22</div>
+                  <div class="songlist__other">
+
+
+                  </div>
+                </div>
+
+              </li>
+            <% end %>
+
+
+
+
+          </ul>
+        </div>
+        <div class="mod_page_nav js_pager">
+          <strong class="current">1</strong><a href="javascript:;" class="js_pageindex" data-index="2" hidefocus="">2</a><a href="javascript:;" class="js_pageindex" data-index="3" hidefocus="">3</a><a href="javascript:;" class="js_pageindex" data-index="4" hidefocus="">4</a><strong class="more">...</strong><a href="javascript:;" class="js_pageindex" data-index="20" hidefocus="">20</a><a href="javascript:;" class="next js_pageindex" data-index="2" title="下一页" hidefocus=""><span>&gt;</span></a>
+        </div>
+      </div>
+      <!-- 专辑 -->
+      <div class="js_search_tab_cont search_tab_cont" id="album_box" style="display: none;"></div>
+      <!-- MV -->
+      <div class="js_search_tab_cont search_tab_cont" id="mv_box" style="display: none;"></div>
+      <!-- 歌单 -->
+      <div class="js_search_tab_cont search_tab_cont" id="playlist_box" style="display: none;"></div>
+      <!-- 用户 -->
+      <div class="js_search_tab_cont search_tab_cont" id="user_box" style="display: none;"></div>
+      <!-- 歌词 -->
+      <button style="display:none;" class="mod_btn" id="defaultCopy"><i class="mod_btn__icon_copy"></i>复制歌词</button>
+      <div class="js_search_tab_cont search_tab_cont" id="lyric_box" style="display: none;"></div>
+      <!--结果为空 S-->
+      <div class="search_tab_cont" id="none_box" style="display:none;">
+        <div class="mod_search_none">
+          <p>很抱歉，暂时没有找到与“<span class="c_tx_highlight js_none_keyword"></span>”相关的结果</p>
+          <p>QQ音乐建议你：请检查输入的关键词是否有误或者过长</p>
+          <p>或到<a href="//support.qq.com/discuss/602_1.shtml" rel="noopener" target="_blank" class="c_tx_highlight">QQ音乐反馈平台</a>，向我们投诉或提出建议。
+          </p>
+        </div>
+      </div>
+
+      <!--结果为空 E-->
+      <div class="mod_loading" id="before_page" style="display: none;"><i class="icon_txt">加载中</i></div>
+      <!--结果列表 E-->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<%= render :partial => "layouts/foot" %>
+
+
+
+
+
+
+<!--<script src="https://y.gtimg.cn/music/h5/client/jsbridge.js?max_age=2592000"></script>-->
+
+<!--<script>-->
+<!--    var params = {-->
+<!--        target: "auto"-->
+<!--    };-->
+<!--    var player = new QMplayer(params);-->
+<!--</script>-->
+
+
+<script>
+
+
+
+    var pages = 1;
+
+    $.ajax({
+        url: 'https://c.y.qq.com/soso/fcgi-bin/client_search_cp?ct=24&qqmusic_ver=1298&new_json=1&remoteplace=txt.yqq.center&searchid=44253135475391727&t=0&aggr=1&cr=1&catZhida=1&lossless=0&flag_qc=0&p=' + pages + '&n=20&w=<%= @search %>',
+        type: "get",
+        async:true,
+        dataType: 'jsonp',
+        jsonp: "jsonpCallback",
+        success: function (data) {
+            console.log(data);
+            //获取得到了多少页
+            var curnum = data.data.song.curnum;
+            console.log(curnum);
+            var orderBody = '';
+            for (var i = 0; i < data.data.song.list.length; i++) {
+                //歌曲名字
+                var songname = data.data.song.list[i].name;
+                $("#c_tx_highlight"+i).html(songname);
+                $("#c_tx_highlight"+i).attr('title',songname);
+                //歌曲是否有原唱
+                var songlist__song_txt = data.data.song.list[i].album.subtitle;
+                $("#songlist__song_txt"+i).html(songlist__song_txt);
+
+                //歌手名字
+                var singer_name = data.data.song.list[i].singer[0].name;
+                $("#singer_name"+i).html(singer_name);
+                $("#singer_name"+i).attr("title",singer_name);
+
+                //专辑名字
+                var album_name = data.data.song.list[i].album.name;
+                $("#album_name"+i).html(album_name);
+
+                //设置mid
+                var songmid = data.data.song.list[i].mid;
+
+                //发布时间
+                var songlist__time=data.data.song.list[i].time_public
+                $("#songlist__time"+i).html(songlist__time)
+                $("#songlist__time"+i).attr('title',songlist__time)
+
+                //可否播放
+                var pay_play=data.data.song.list[i].pay.pay_play
+                if (pay_play==0){
+                    $("#icon_txt"+i).attr('title',songmid)
+                }else
+                {
+                    $("#js_play"+i).attr('display','none')
+                }
+
+                //歌手MID
+                var singerMID = data.data.song.list[i].singerMID
+
+                var url_play='https://api.mlwei.com/music/api/?key=523077333&cache=1&type=url&id='+songmid+'&size=hq';
+                $("#playera"+i).attr('src',url_play)
+
+                // //播放
+                // $("#js_play"+i).click(function () {
+                //     var player =document.getElementById("#player"+i)
+                //     player.play(player);
+                // })
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+        },
+        error: function (e) {
+            console.log('error');
+        }
+    });
+
+</script>
+
+
+<script>
+    window.onload=function() {
+
+        $("#js_play0").click(function () {
+               var player0=document.getElementById('playera0')
+                if (player0.paused){ /*如果已经暂停*/
+                    player0.play(); /*播放*/
+                $("#gift0").css("display","inline")
+                }else {
+                    player0.pause();/*暂停*/
+                    $("#gift0").css("display","none")
+                }
+            })
+
+        $("#js_play1").click(function () {
+            var player1 = document.getElementById('playera1')
+            if (player1.paused) { /*如果已经暂停*/
+                player1.play();
+                /*播放*/
+                $("#gift1").css("display", "inline")
+            } else {
+                player1.pause();
+                /*暂停*/
+                $("#gift1").css("display", "none")
+            }
+        })
+
+        $("#js_play2").click(function () {
+            var player2 = document.getElementById('playera2')
+            if (player2.paused) { /*如果已经暂停*/
+                player2.play();
+                /*播放*/
+                $("#gift2").css("display", "inline")
+            } else {
+                player2.pause();
+                /*暂停*/
+                $("#gift2").css("display", "none")
+            }
+        })
+
+        $("#js_play3").click(function () {
+            var player3 = document.getElementById('playera3')
+            if (player3.paused) { /*如果已经暂停*/
+                player3.play();
+                /*播放*/
+                $("#gift3").css("display", "inline")
+            } else {
+                player3.pause();
+                /*暂停*/
+                $("#gift3").css("display", "none")
+            }
+        })
+
+        $("#js_play4").click(function () {
+            var player4 = document.getElementById('playera4')
+            if (player4.paused) { /*如果已经暂停*/
+                player4.play();
+                /*播放*/
+                $("#gift4").css("display", "inline")
+            } else {
+                player4.pause();
+                /*暂停*/
+                $("#gift4").css("display", "none")
+            }
+        })
+
+        $("#js_play5").click(function () {
+            var player5 = document.getElementById('playera5')
+            if (player5.paused) { /*如果已经暂停*/
+                player5.play();
+                /*播放*/
+                $("#gift5").css("display", "inline")
+            } else {
+                player5.pause();
+                /*暂停*/
+                $("#gift5").css("display", "none")
+            }
+        })
+
+        $("#js_play6").click(function () {
+            var player6 = document.getElementById('playera6')
+            if (player6.paused) { /*如果已经暂停*/
+                player6.play();
+                /*播放*/
+                $("#gift6").css("display", "inline")
+            } else {
+                player6.pause();
+                /*暂停*/
+                $("#gift6").css("display", "none")
+            }
+        })
+
+        $("#js_play7").click(function () {
+            var player7 = document.getElementById('playera7')
+            if (player7.paused) { /*如果已经暂停*/
+                player7.play();
+                /*播放*/
+                $("#gift7").css("display", "inline")
+            } else {
+                player7.pause();
+                /*暂停*/
+                $("#gift7").css("display", "none")
+            }
+        })
+
+        $("#js_play8").click(function () {
+            var player8 = document.getElementById('playera8')
+            if (player8.paused) { /*如果已经暂停*/
+                player8.play();
+                /*播放*/
+                $("#gift8").css("display", "inline")
+            } else {
+                player8.pause();
+                /*暂停*/
+                $("#gift8").css("display", "none")
+            }
+        })
+
+        $("#js_play9").click(function () {
+            var player9 = document.getElementById('playera9')
+            if (player9.paused) { /*如果已经暂停*/
+                player9.play();
+                /*播放*/
+                $("#gift9").css("display", "inline")
+            } else {
+                player9.pause();
+                /*暂停*/
+                $("#gift9").css("display", "none")
+            }
+        })
+
+        $("#js_play10").click(function () {
+            var player10 = document.getElementById('playera10')
+            if (player10.paused) { /*如果已经暂停*/
+                player10.play();
+                /*播放*/
+                $("#gift10").css("display", "inline")
+            } else {
+                player10.pause();
+                /*暂停*/
+                $("#gift10").css("display", "none")
+            }
+        })
+
+        $("#js_play11").click(function () {
+            var player11 = document.getElementById('playera11')
+            if (player11.paused) { /*如果已经暂停*/
+                player11.play();
+                /*播放*/
+                $("#gift11").css("display", "inline")
+            } else {
+                player11.pause();
+                /*暂停*/
+                $("#gift11").css("display", "none")
+            }
+        })
+
+        $("#js_play12").click(function () {
+            var player12 = document.getElementById('playera12')
+            if (player12.paused) { /*如果已经暂停*/
+                player12.play();
+                /*播放*/
+                $("#gift12").css("display", "inline")
+            } else {
+                player12.pause();
+                /*暂停*/
+                $("#gift12").css("display", "none")
+            }
+        })
+
+        $("#js_play13").click(function () {
+            var player13 = document.getElementById('playera13')
+            if (player13.paused) { /*如果已经暂停*/
+                player13.play();
+                /*播放*/
+                $("#gift13").css("display", "inline")
+            } else {
+                player13.pause();
+                /*暂停*/
+                $("#gift13").css("display", "none")
+            }
+        })
+
+        $("#js_play14").click(function () {
+            var player14 = document.getElementById('playera14')
+            if (player14.paused) { /*如果已经暂停*/
+                player14.play();
+                /*播放*/
+                $("#gift14").css("display", "inline")
+            } else {
+                player14.pause();
+                /*暂停*/
+                $("#gift14").css("display", "none")
+            }
+        })
+
+        $("#js_play15").click(function () {
+            var player15 = document.getElementById('playera15')
+            if (player15.paused) { /*如果已经暂停*/
+                player15.play();
+                /*播放*/
+                $("#gift15").css("display", "inline")
+            } else {
+                player15.pause();
+                /*暂停*/
+                $("#gift15").css("display", "none")
+            }
+        })
+
+        $("#js_play16").click(function () {
+            var player16 = document.getElementById('playera16')
+            if (player16.paused) { /*如果已经暂停*/
+                player16.play();
+                /*播放*/
+                $("#gift16").css("display", "inline")
+            } else {
+                player16.pause();
+                /*暂停*/
+                $("#gift16").css("display", "none")
+            }
+        })
+
+        $("#js_play17").click(function () {
+            var player17 = document.getElementById('playera17')
+            if (player17.paused) { /*如果已经暂停*/
+                player17.play();
+                /*播放*/
+                $("#gift17").css("display", "inline")
+            } else {
+                player17.pause();
+                /*暂停*/
+                $("#gift17").css("display", "none")
+            }
+        })
+
+        $("#js_play18").click(function () {
+            var player18 = document.getElementById('playera18')
+            if (player18.paused) { /*如果已经暂停*/
+                player18.play();
+                /*播放*/
+                $("#gift18").css("display", "inline")
+            } else {
+                player18.pause();
+                /*暂停*/
+                $("#gift18").css("display", "none")
+            }
+        })
+
+        $("#js_play19").click(function () {
+            var player19 = document.getElementById('playera19')
+            if (player19.paused) { /*如果已经暂停*/
+                player19.play();
+                /*播放*/
+                $("#gift19").css("display", "inline")
+            } else {
+                player19.pause();
+                /*暂停*/
+                $("#gift19").css("display", "none")
+            }
+        })
+    }
+</script>
+
+
+<button id="bb">11</button>
+<audio id="a1"  loop="loop" src="https://api.mlwei.com/music/api/?key=523077333&cache=1&type=url&id=004DXFlC0nsTCZ&size=hq"/>

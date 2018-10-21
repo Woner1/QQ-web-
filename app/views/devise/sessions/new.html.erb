@@ -1,26 +1,104 @@
-<h2>Log in</h2>
+<style type="text/css">
+  .login_form {
+    width: 272px;
+    margin: 0 auto;
+  }
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  .uinArea {
+    height: 55px;
+    position: relative;
+    z-index: 10;
+  }
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+  .pwdArea {
+    height: 55px;
+    position: relative;
+    z-index: 3;
+  }
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  .inputOuter {
+    width: 272px;
+    height: 42px;
+    background-color: #ffffbf;
+
+  }
+
+  .inputstyle {
+
+    width: 258px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    height: 18px;
+    padding: 10px 0 10px 10px;
+    line-height: 18px;
+    border: none;
+    background: 0 0;
+    color: #333;
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 16px;
+  }
+
+  .submit {
+    position: relative;
+    height: 40px;
+    background-color: #86ce2f;
+  }
+
+  .login_button {
+    position: absolute;
+    left: 0;
+    outline: 0;
+    width: 100%;
+  }
+
+  .login_button .btn {
+    width: 100%;
+    height: 40px;
+    line-height: 35px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: "Microsoft Yahei", "微软雅黑", SimHei, "黑体", "Hiragino Sans GB", STHeiTi, sans-serif;
+    color: #fff;
+    background: 0 0;
+    cursor: pointer;
+  }
+</style>
+
+<div id="divdialog_0" class="mod_popup popup_login" data-aria="popup" style="position: fixed; z-index: 100000; top: 107px; margin: 10px; left: 402px;">
+  <center>
+    <div class="popup__hd">
+      <h2 class="popup__tit">
+        <a href="javascript:;" class="popup__tit_item current js_iframe_login" data-type="qq" style="">QQ登录</a>
+<!--        <a href="javascript:;" class="popup__tit_item js_iframe_login" data-type="wx" style="">微信登录</a>-->
+      </h2>
     </div>
-  <% end -%>
+    <a href="javascript:;" class="popup__close" title="关闭"><i class="popup__icon_close"></i><i class="icon_txt">关闭</i></a>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <div class="popup__bd " id="dialogbox">
+      <div class="login_form">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="uinArea" id="uinArea">
+            <label class="input_tips" id="uin_tips" for="u" data-onlyqq="QQ号码" style="display: none;">支持QQ号/邮箱/手机号登录</label>
+            <div class="inputOuter"> <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputstyle", placeholder: "邮箱" %>
+              <a class="uin_del" id="uin_del" href="javascript:void(0);" style="display: block;"></a></div>
+            <ul class="email_list" id="email_list" style="display: none;"></ul>
+          </div>
+          <div class="pwdArea" id="pwdArea">
+            <label class="input_tips" id="pwd_tips" for="p" style="display: none;">密码</label>
+            <div class="inputOuter">
+              <%= f.password_field :password, autocomplete: "current-password", class: "inputstyle", placeholder: "密码" %>
+            </div>
+            <div class="lock_tips" id="caps_lock_tips" style="display: none;"><span class="lock_tips_row"></span>
+              <span>大写锁定已打开</span></div>
+          </div>
+          <div class="submit">
+            <a class="login_button" href="javascript:void(0);" hidefocus="true"><input type="submit" tabindex="6" value="登 录" class="btn" id="login_button"></a>
+          </div>
+          <%= link_to '还没有账号？去注册', new_user_registration_path %>
+        <% end %>
+      </div>
+    </div>
+  </center>
+</div>

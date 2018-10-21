@@ -32,9 +32,63 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method= :test
-  host= ':localhost:3000'
-  config.action_mailer.default_url_options = {host: host}
+ # config.action_mailer.delivery_method= :test
+ # host= ':localhost:3000'
+ # config.action_mailer.default_url_options = {host: host}
+ #  config.action_mailer.delivery_method = :smtp # 发送邮件方式
+ #  config.action_mailer.smtp_settings = {
+ #      :address        => 'smtp.gmail.com',
+ #      :port           => 587,
+ #      :authentication => :plain,
+ #      :user_name      => '"2609746800@qq.com"', #你的gmail帐号
+ #      :password       => 'q15992027609' #你的gmail密码
+ #  }
+
+  # ActionMailer::Base.delivery_method = :smtp
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.default :charset => "utf-8"
+  # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  # ActionMailer::Base.smtp_settings = {
+  #     :address => "smtp.gmail.com",
+  #     :port => 587,
+  #     :authentication => :login,
+  #     :user_name => "2609746800@qq.com",
+  #     :password => "q15992027609"
+  # }
+
+  ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  ActionMailer::Base.smtp_settings = {
+      :address => "smtp.163.com",
+      :port => 25,
+      :domain => "163.com",
+      :authentication => :login,
+      :user_name => "lzzengyu@163.com",
+      :password => "q15991599"
+  }
+
+
+
+
+  # Disable request forgery protection in development environment
+  config.action_controller.allow_forgery_protection = false
+
+
+  # ActionMailer::Base.delivery_method = :smtp     #使用smtp发送邮件
+  #
+  # ActionMailer::Base.server_settings ={
+  # :address => "smtp.gamil.com",
+  # :port => 587,
+  # :authentication => :login,
+  # :user_name => "lzzengyus@gmail.com",
+  # :password => "q1591599",
+  # :authentication => 'plain',
+  # :enable_starttls_auto => true,
+  #}
 
   config.action_mailer.perform_caching = false
 

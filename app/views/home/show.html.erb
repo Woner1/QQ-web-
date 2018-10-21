@@ -1,138 +1,1524 @@
-<script src="//y.gtimg.cn/music/h5/player/player.js?max_age=2592000"></script>
+<link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/layout.css?max_age=25920000&amp;v=20180803">
+<link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/song_detail.css?max_age=2592000&amp;v=20180803">
+<link rel="stylesheet" type="text/css" href="https://stdl.qq.com/stdl/qqbrowser/floatlayer/css/qb-ie-remind.css?1539439014025">
+<style>
+
+
+  .lyric__cont.limit .lyric__cont_box {
+    max-height: 390px;
+    overflow-y: scroll;
+  }
+  .lyric__cont_box {
+
+    overflow-y: scroll;
+  }
+</style>
+
+<%= render :partial => "layouts/title" %>
+
+<div class="main">
+  <div class="mod_data" itemscope="" itemtype="http://schema.org/MusicRecording" style="display:block;">
+		    <span class="data__cover">
+
+				<img src="" alt="未·LIVE" class="data__photo" id="image">
+
+		    </span>
+    <div class="data__cont">
+      <div class="data__name">
+        <h1 class="data__name_txt" title="" id="title"></h1>
+      </div>
+
+
+      <div class="data__singer" title="张杰">
+        <i class="icon_singer sprite"></i>
+
+
+        <a  data-mid="002azErJ0UcDN6" title="张杰" class="data__singer_txt js_singer" data-stat="y_new.song.header.singername" itemprop="byArtist" id="singername">
+          张杰 </a>
+
+
+      </div>
+
+      <ul class="data__info">
+
+        <li class="data_info__item data_info__item--even">专辑：<a  itemprop="inAlbum" class="js_album" title="未·LIVE" id="albumname">未·LIVE</a>
+        </li>
+
+        <li class="data_info__item js_lan" style="">语种：国语</li>
+        <li class="data_info__item js_genre data_info__item--even" style="">流派：Pop</li>
+
+        <!--        <li class="data_info__item js_company" style="">唱片公司：<a href="https://y.qq.com/portal/company_detail.html?id=97322">张杰行星文化音乐厂牌</a></li>-->
+
+
+        <!--        <li class="data_info__item js_public_time data_info__item--even" style="">发行时间：2018-10-12</li>-->
+
+
+      </ul>
+      <div class="data__actions" role="toolbar">
+        <%= link_to new_song_path(@show_id),class: "mod_btn_green js_all_play" do %><i class="mod_btn_green__icon_play" ></i>播放 <% end  %>
+        <a  class="mod_btn_green js_all_play" id="songmid" title="" style="display: none;"><i class="mod_btn_green__icon_play" ></i>播放</a>
+        <a  class="mod_btn_green js_all_play" id="pay"></a>
+
+
+        <a href="javascript:;" class="mod_btn js_all_like"><i class="mod_btn__icon_like"></i>收藏</a>
+
+
+        <a class="mod_btn js_into_comment" data-stat="y_new.song.gotocomment" href="#comment_box"><i class="mod_btn__icon_comment"></i>评论(6723)</a>
+        <a href="javascript:;" class="mod_btn js_more" data-stat="y_new.song.header.more" data-id="217530992" data-songtype="0" data-mid="002LpYBV3X9Ena"><i class="mod_btn__icon_menu"></i>更多</a>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="detail_layout">
+    <div class="detail_layout__main">
+
+      <!--歌词_S-->
+      <div class="mod_lyric">
+        <input id="copy_content" style="display:none;">
+        <div class="lyric__hd">
+          <h2 class="lyric__tit">歌词</h2>
+          <a class="btn_copy sprite" id="copy_link" href="javascript:;" onclick="copyLyric('copy_content');" data-clipboard-target="#copy_content" title="复制歌词" data-clipboard-action="copy"><i class="icon_txt">复制</i></a>
+        </div>
+        <div class="lyric__cont limit">
+          <div class="lyric__cont_box" id="lrc_content" id="lyric" ></div>
+
+          <a href="javascript:;" class="c_tx_highlight js_open_lyric" onclick="f()">[展开]</a>
+
+        </div>
+      </div>
+      <!--歌词_E-->
+      <div class="mod_comment" id="comment_box">
+        <div class="part__hd">
+          <h2 class="part__tit">评论<span class="c_tx_thin part__tit_desc js_all_comment_num">共6723条评论</span></h2>
+        </div>
+        <div class="mod_comment js_cmt_input">
+
+          <div class="comment__input">
+            <div class="comment__textarea js_comment__textarea  c_bg_normal">
+              <div class="comment__textarea_inner">
+                <!--c_tx_normal-->
+                <!--focus评论框的时候将.comment__textarea_default模块隐藏，同时显示.comment__textarea_input-->
+                <div class="comment__textarea_default c_tx_thin js_reply_text_blur" name="" id="reply_text_blur" contenteditable="true">期待你的神评论……</div>
+                <div class="js_reply_text comment__textarea_input c_tx_normal" name="" id="reply_text" contenteditable="true" style="display:none;"></div>
+              </div>
+              <!--字数超过后添加comment__tips--warn_tx 去掉c_tx_thin-->
+              <div class="comment__tips js_comment_tips c_tx_thin" data-max="300">剩余<span class="c_tx_highlight">300</span>字
+              </div>
+            </div>
+            <a class="comment__face js_cmt_face" href="javascript:;" data-type="reply"><i class="icon_comment icon_comment_face"></i></a>
+            <div class="comment__tool">
+              <a href="javascript:;" class="mod_btn_green comment__tool_btn js_send_reply">发表评论</a></div>
+
+          </div>
+        </div>
+        <div class="mod_comment js_mod_hot">
+          <div class="mod_hot_comment">
+            <div class="comment_type__title c_b_normal">
+              <h2>精彩评论(19)</h2>
+            </div>
+            <ul class="comment__list js_hot_list">
+
+              <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="1830504231">
+                  <img class="js_lazy_comment_pic" data-original="//y.gtimg.cn/music/photo_new/T023R750x750M000002NoHoY0aP5G8.jpg?max_age=2592000" alt="^" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="^" src="//y.gtimg.cn/music/photo_new/T023R750x750M000002NoHoY0aP5G8.jpg?max_age=2592000" style="display: block; visibility: visible;">
+
+                  <img class="comment__avatar_icon" src="//y.gtimg.cn/music/common/upload/t_cm3_photo_publish/114041.png?max_age=2592000">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1830504231">^</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/nsvip4.png?max_age=2592000" alt="绿钻"></span>
+
+
+                  <span class="icon_comment icon_comment_top"></span>
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">Live ls
+                  drean—一是做梦,是幻层,是不被缺憾侵染的工整;是熵增,是守恒,是无药可救者唯一出逃的裂缝。<br>Live ls
+                  Thought-一是思想,是坚强,是控诉时无意扣动扳机的枪;是信仰,是归乡,是用声音描摹的意象。<br>Live ls
+                  Change-一是变化,是迸发,是等待与寻找间,偷偷盛开的野花;是扼杀,是挣扎,是一往无前早已了却的牵挂<br>Live Is
+                  Karma--是因果,是争夺,是走过轮回尽头的超脱;是枷锁,是迷惑,是世事如烟,不灭的业火<br>Live Is
+                  soul--是灵魂,是囚困,是扪心自问语焉不详的含混;是翻滚,是沉沦,是被沉默消解殆尽,洗尽铅华的黄昏</p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1830504231_1538105308">
+                  <span class="comment__date c_tx_thin">9月28日 11:28</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1830504231_1538105308" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1830504231_1538105308" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">3398</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="^" data-uin="1830504231" data-cmtid="song_217530992_1830504231_1538105308">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="2120406115">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=KibI9VNGKooiccoA7TNq5Qxw&amp;s=140&amp;t=1538646813" alt="娜扎是洋娃娃🇨🇳" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="娜扎是洋娃娃🇨🇳" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=KibI9VNGKooiccoA7TNq5Qxw&amp;s=140&amp;t=1538646813" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2120406115">娜扎是洋娃娃🇨🇳</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip2.png?max_age=2592000" alt="绿钻"></span>
+
+
+                  <span class="icon_comment icon_comment_top"></span>
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">我杰哥今年的未.live音乐计划可谓是大获成功，但唯一美中不足的就是很多路人听不到！<br>我想众多星星都见过过有别家粉丝私信你让你把杰哥专辑的歌发给他们，发几个还好，但这么多路人求着你发真的自己都厌倦了！好的音乐如果很多人听不到那真的可惜了！<br>我们作为粉丝当然很乐意为自己的偶像花钱，但路人不会啊！工作室真的可以把前两张EP开通免费试听让更多人听到了，我们买了EP的星星并没有觉得不公平！<br>他是亚洲仅有的几个超人气之一，就算他版权没了热度依然这么高，这说明什么？说明他已经成为信～仰，因为他的歌激励了无数人成为！<br>杰哥永远都是我最喜欢的歌手，他不是神，他是王，live王，一开口就是舞台上最耀眼的王！
+                </p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2120406115_1538100407">
+                  <span class="comment__date c_tx_thin">9月28日 10:06</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2120406115_1538100407" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2120406115_1538100407" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">2980</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="娜扎是洋娃娃🇨🇳" data-uin="2120406115" data-cmtid="song_217530992_2120406115_1538100407">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="2420823708">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=I7vHCKhf0DVzDvDBoJgIsA&amp;s=140&amp;t=1534119331" alt="顾全" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="顾全" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=I7vHCKhf0DVzDvDBoJgIsA&amp;s=140&amp;t=1534119331" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2420823708">顾全</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip4.png?max_age=2592000" alt="绿钻"></span>
+
+
+                  <span class="icon_comment icon_comment_top"></span>
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">可能在别人眼中我们是追星族，无药可救。但是。是因为他们没有遇到自己觉得独一无二深深欣赏的那个人。曾经我也认为追星很可笑，现在觉得我那时候的想法更可笑。相比之下，我更爱现在的自己。毕竟我的青春因某个人而疯狂过。比那些一点一线一张白纸好的多
+                  。</p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2420823708_1538100320">
+                  <span class="comment__date c_tx_thin">9月28日 10:05</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2420823708_1538100320" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2420823708_1538100320" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">1785</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="顾全" data-uin="2420823708" data-cmtid="song_217530992_2420823708_1538100320">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="415456277">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=cpOLtz9gyUNLy4BlVtic83g&amp;s=140&amp;t=1538920972" alt="你最珍贵" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="你最珍贵" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=cpOLtz9gyUNLy4BlVtic83g&amp;s=140&amp;t=1538920972" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="415456277">你最珍贵</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip1.png?max_age=2592000" alt="绿钻"></span>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">别人的头发花花绿绿时，张杰的头发是黑的。别人在机场被保安包围往前走时，张杰帮星星拿着东西，边走边聊。别人穿着铆钉长靴时，张杰是匡威。别人在演唱会上说煽情的话时，张杰望着舞台下的蓝色星海笑出了皱纹。别人在休息室里等开场时，张杰买了西瓜切给等在场外的歌迷吃。这就是我最爱的歌手张小杰</p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_415456277_1538104359">
+                  <span class="comment__date c_tx_thin">9月28日 11:12</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_415456277_1538104359" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_415456277_1538104359" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">1578</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="你最珍贵" data-uin="415456277" data-cmtid="song_217530992_415456277_1538104359">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="2861882729">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=vkwoGLaDYnEmbgPZTQbHpA&amp;s=140&amp;t=1538749679" alt="见贤" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="见贤" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=vkwoGLaDYnEmbgPZTQbHpA&amp;s=140&amp;t=1538749679" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2861882729">见贤</a>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">201
+                  8更优秀的歌手张杰和2018最幸福歌迷<br>勇从舒适圈踏破边际，奔出万里，将自由融合的音乐唱至淋漓<br>赤子之心不愿安于现状，与独创的mix- pop一起再度启航<br>以实力坐拥各大影视金曲，以形象赢得主流媒体青睐<br>跋涉几许，
+                  未·LIVE继续<br>未来无限可能，张杰未完待续<img src="//y.gtimg.cn/mediastyle/global/emoji/img/e401236.png"></p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2861882729_1538103916">
+                  <span class="comment__date c_tx_thin">9月28日 11:05</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2861882729_1538103916" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2861882729_1538103916" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">682</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="见贤" data-uin="2861882729" data-cmtid="song_217530992_2861882729_1538103916">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="1534433626">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=zbS6NsI8tOf4zGUibu3e1Rg&amp;s=140&amp;t=1537023392" alt="彭十六elf" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="彭十六elf" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=zbS6NsI8tOf4zGUibu3e1Rg&amp;s=140&amp;t=1537023392" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1534433626">彭十六elf</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip2.png?max_age=2592000" alt="绿钻"></span>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">杰哥，你就是我的王啊！爱上张杰，无可救药，若要有药，那便是张杰！真的太好听了！</p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1534433626_1538113115">
+                  <span class="comment__date c_tx_thin">9月28日 13:38</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1534433626_1538113115" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1534433626_1538113115" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">550</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="彭十六elf" data-uin="1534433626" data-cmtid="song_217530992_1534433626_1538113115">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="479954493">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=O8ebnsH2pvstus2UpfSvSA&amp;s=140&amp;t=1520391488" alt="往事似烟、" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="往事似烟、" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=O8ebnsH2pvstus2UpfSvSA&amp;s=140&amp;t=1520391488" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="479954493">往事似烟、</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/nsvip6.png?max_age=2592000" alt="绿钻"></span>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">相对于张杰此前发行的两张EP，既保留了原有的多风格融合，又在此前的基调上更进一步，EP由两首中文作品和一首英文作品组合搭配。其中歌曲《无药可救》节奏轻快，张杰在不需要任何铺垫的情况下能直接快速跳音阶，声音从极弱到极强，从极低到极高，只需一瞬间。《做梦》以高音起调，整首歌曲音调都在一个超高又听起来舒适的水平线上，长音通透，歌曲曲调极富美感，尾音处理富有控制感，对歌曲把控能力之精微。</p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_479954493_1538107253">
+                  <span class="comment__date c_tx_thin">9月28日 12:00</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_479954493_1538107253" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_479954493_1538107253" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">548</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="往事似烟、" data-uin="479954493" data-cmtid="song_217530992_479954493_1538107253">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="1152921504722696560">
+                  <img class="js_lazy_comment_pic" data-original="//thirdwx.qlogo.cn/mmopen/vi_32/Z19xY2BFzwZIC2rzSW8cgetUwN0ZKBTAoiboicOYoFaYfgbrEF72g2Fza6pEc6Hk0GibGS5fPmdWJbppkhIdibicEdw/132" alt="一笑而过" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="一笑而过" src="//thirdwx.qlogo.cn/mmopen/vi_32/Z19xY2BFzwZIC2rzSW8cgetUwN0ZKBTAoiboicOYoFaYfgbrEF72g2Fza6pEc6Hk0GibGS5fPmdWJbppkhIdibicEdw/132" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1152921504722696560">一笑而过</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/nsvip3.png?max_age=2592000" alt="绿钻"></span>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">要说张杰最近出歌够神速的，一出手便三部未.LlVE新曲令不少喜欢杰哥的粉丝们为之兴奋为之雀跃。尤其是这曲《无药可救》迅速窜红歌迷们喜欢不要不要的。翘首一盼张杰2018－10－13“未.LIVE”巡回演唱会－成都站的杰出展示！</p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1152921504722696560_1538141037">
+                  <span class="comment__date c_tx_thin">9月28日 21:23</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1152921504722696560_1538141037" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1152921504722696560_1538141037" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">508</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="一笑而过" data-uin="1152921504722696560" data-cmtid="song_217530992_1152921504722696560_1538141037">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="2861882729">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=vkwoGLaDYnEmbgPZTQbHpA&amp;s=140&amp;t=1538749679" alt="见贤" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="见贤" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=vkwoGLaDYnEmbgPZTQbHpA&amp;s=140&amp;t=1538749679" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2861882729">见贤</a>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">未·LIVE方得始终<br>Live，是做梦，是幻层<br>Live，是思想，是坚强<br>Live，是变化，是迸发<br>Live，是因果，是争夺<br>Live，是灵魂，是囚困
+                </p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2861882729_1538103911">
+                  <span class="comment__date c_tx_thin">9月28日 11:05</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2861882729_1538103911" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2861882729_1538103911" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">472</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="见贤" data-uin="2861882729" data-cmtid="song_217530992_2861882729_1538103911">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="2389925698">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=TWYiaCsy2CSPIESfsXaahiaA&amp;s=140&amp;t=1539261517" alt="代古拉k" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="代古拉k" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=TWYiaCsy2CSPIESfsXaahiaA&amp;s=140&amp;t=1539261517" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2389925698">代古拉k</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/nsvip8.png?max_age=2592000" alt="绿钻"></span>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">【未•LIVE】从未-LIVE1—未-LIVE3，每一首歌，精心诠释了MIX
+                  POP，见证未LIVE极限跃升，未LIVE3
+                  全新上线。做2018最幸福的歌迷，每一次都会支持最优秀的他！<img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400213.png">
+
+                  张老师用三首歌表达了
+                  我在音乐路上从未《slow down》
+                  我会让你们爱我爱到《无药可救》
+                  以后想随意学会我的一首歌《做梦》
+
+                  你做到了！ 高产且质量越来越高的音乐人张杰，最幸福的歌迷见证也更清晰看到了你引领的天下！</p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2389925698_1538110827">
+                  <span class="comment__date c_tx_thin">9月28日 13:00</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2389925698_1538110827" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2389925698_1538110827" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">429</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="代古拉k" data-uin="2389925698" data-cmtid="song_217530992_2389925698_1538110827">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="2952306078">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=DyYd7tvm6xPibibpza3cHbRg&amp;s=140&amp;t=1539149958" alt="洛依成" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="洛依成" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=DyYd7tvm6xPibibpza3cHbRg&amp;s=140&amp;t=1539149958" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2952306078">洛依成</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip1.png?max_age=2592000" alt="绿钻"></span>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">我喜欢的人<br>我对你说过<br>别当着我的面和别人暧昧<br>别当我不存在<br>可你暧昧成瘾<br>呼<br>再见了，毕竟我爱过你<br>无药可救的姑娘<br>
+                </p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2952306078_1538104504">
+                  <span class="comment__date c_tx_thin">9月28日 11:15</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2952306078_1538104504" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2952306078_1538104504" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">332</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="洛依成" data-uin="2952306078" data-cmtid="song_217530992_2952306078_1538104504">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="2292084421">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=FgVorn5y2kaDEYJQW32XOA&amp;s=140&amp;t=1539185514" alt="卿臣" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="卿臣" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=FgVorn5y2kaDEYJQW32XOA&amp;s=140&amp;t=1539185514" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2292084421">卿臣</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/nsvip4.png?max_age=2592000" alt="绿钻"></span>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">当我们听到你给女儿的一封信时，我们就知道，你又将增加一个新的身份，一份不同寻常的感情<br>不管你是当初的少年还是现在的为人夫为人父我们都依然爱你无可救药<br>张杰勇敢飞星星永相随
+                </p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2292084421_1538139274">
+                  <span class="comment__date c_tx_thin">9月28日 20:54</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2292084421_1538139274" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2292084421_1538139274" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">285</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="卿臣" data-uin="2292084421" data-cmtid="song_217530992_2292084421_1538139274">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="3186899141">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=tq9AXdwsBrpf2hrlVJwiclw&amp;s=140&amp;t=1538900288" alt="克雷斯的小白菜" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="克雷斯的小白菜" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=tq9AXdwsBrpf2hrlVJwiclw&amp;s=140&amp;t=1538900288" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="3186899141">克雷斯的小白菜</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip1.png?max_age=2592000" alt="绿钻"></span>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">今天去寄快递，小姐姐就一直在放这歌，我就和小伙伴在讨论"你听这个是不是张杰""我听听……是吗？""绝对是，他可是我整个初中时代的男神""真的是诶这是新歌吧""应该是新歌"然后快递小姐姐"想知道是什么歌吗？不告诉你们"傲娇哈哈哈哈哈哈哈哈</p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_3186899141_1538249374">
+                  <span class="comment__date c_tx_thin">9月30日 03:29</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_3186899141_1538249374" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_3186899141_1538249374" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">210</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="克雷斯的小白菜" data-uin="3186899141" data-cmtid="song_217530992_3186899141_1538249374">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="3124233761">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=JPKfte3ibBIYicSACibjibmAtw&amp;s=140&amp;t=1538983095" alt="justforyou" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="justforyou" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=JPKfte3ibBIYicSACibjibmAtw&amp;s=140&amp;t=1538983095" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="3124233761">justforyou</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip2.png?max_age=2592000" alt="绿钻"></span>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">“唱的是泼墨狂野心灵出逃<br>我们爱着甜蜜，碍着枷锁，挨着悬崖，捱着过活<br>我们无药可求，我们被压抑<br>被束缚，被捆住手脚<br>我们挣脱，我们试图逃跑，我们孤独呐喊<br>我们当摆渡人，去忙碌，关于别人的喜怒哀乐<br>我们渴望摆渡人，去救赎自己，给挣扎以强心剂<br>我们重复相同的路，复习类似的倦怠<br>最后颠覆心口上的无限烦扰<br>哪有百毒不侵，无非是无药可救后的落地成仙<br>让离开的人远走，让不忿的事消失<br>让所有的不快乐无处可逃”
+                </p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_3124233761_1538305265">
+                  <span class="comment__date c_tx_thin">9月30日 19:01</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_3124233761_1538305265" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_3124233761_1538305265" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">199</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="justforyou" data-uin="3124233761" data-cmtid="song_217530992_3124233761_1538305265">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+              <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+                <a href="javascript:;" class="comment__avatar js_nick" data-uin="2235414701">
+                  <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=8DvtER0UBCGcMW4YfImgOw&amp;s=140&amp;t=1539091689" alt="苏酥" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/singer_300.png?max_age=2592000';this.onerror=null" title="苏酥" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=8DvtER0UBCGcMW4YfImgOw&amp;s=140&amp;t=1539091689" style="display: block; visibility: visible;">
+
+                </a>
+                <h4 class="comment__title">
+                  <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2235414701">苏酥</a>
+
+                  <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip1.png?max_age=2592000" alt="绿钻"></span>
+
+
+                </h4>
+
+
+                <p class="c_tx_normal comment__text js_hot_text">知错不改，无药可救.<br>有路不行，无药可救.<br>不顾情谊，无药可救.<br>不喜欢你，无药可救.
+                </p>
+
+
+                <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2235414701_1538386173">
+                  <span class="comment__date c_tx_thin">10月1日 17:29</span>
+
+                  <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2235414701_1538386173" href="javascript:;">举报</a>
+
+
+                  <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2235414701_1538386173" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">116</span></a>
+                  <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="苏酥" data-uin="2235414701" data-cmtid="song_217530992_2235414701_1538386173">回复</a>
+
+                </div>
+                <div class="js_reply_container"></div>
+              </li>
+
+            </ul>
+            <!-- 展开状态comment__show_all--on -->
+            <div class="comment__show_all">
+              <a href="javascript:;" class="comment__show_all_link c_tx_thin js_get_more_hot" style="">点击加载更多<i class="comment__icon_arrow_down sprite"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="mod_all_comment js_mod_all">
+          <div class="comment_type__title c_b_normal">
+            <h2>最新评论(6723)</h2>
+          </div>
+          <ul class="comment__list js_all_list">
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="907547994">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=usAg3UrAM2UfzfvjyCeJhA&amp;s=140&amp;t=1515587377" alt="无所谓丶" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="无所谓丶" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=usAg3UrAM2UfzfvjyCeJhA&amp;s=140&amp;t=1515587377" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="907547994">无所谓丶</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">呵呵还要钱？让听都懒得听</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_907547994_1539438946">
+                <span class="comment__date c_tx_thin">21:55</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_907547994_1539438946" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_907547994_1539438946" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="无所谓丶" data-uin="907547994" data-cmtid="song_217530992_907547994_1539438946">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1742129337">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=e5ib96yb6UicILq71gicyVPSA&amp;s=140&amp;t=1537752482" alt="千幻" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="千幻" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=e5ib96yb6UicILq71gicyVPSA&amp;s=140&amp;t=1537752482" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1742129337">千幻</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">超级好超级好的歌手，超好听</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1742129337_1539438148">
+                <span class="comment__date c_tx_thin">21:42</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1742129337_1539438148" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1742129337_1539438148" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="千幻" data-uin="1742129337" data-cmtid="song_217530992_1742129337_1539438148">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="814587056">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=Syb5wTbiaJ0jvT67ibXXiaWxQ&amp;s=140&amp;t=1538498854" alt="-" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="-" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=Syb5wTbiaJ0jvT67ibXXiaWxQ&amp;s=140&amp;t=1538498854" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="814587056">-</a>
+
+                <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/nsvip4.png?max_age=2592000" alt="绿钻"></span>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">怎么听的这么耳熟</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_814587056_1539438097">
+                <span class="comment__date c_tx_thin">21:41</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_814587056_1539438097" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_814587056_1539438097" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="-" data-uin="814587056" data-cmtid="song_217530992_814587056_1539438097">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1481920725">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=MqDVEAXLWkenws7W72DolQ&amp;s=140&amp;t=1523077606" alt="七 笔 😼" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="七 笔 😼" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=MqDVEAXLWkenws7W72DolQ&amp;s=140&amp;t=1523077606" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1481920725">七 笔 😼</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">看到这种要vlp的就烦</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1481920725_1539437934">
+                <span class="comment__date c_tx_thin">21:38</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1481920725_1539437934" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1481920725_1539437934" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">1</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="七 笔 😼" data-uin="1481920725" data-cmtid="song_217530992_1481920725_1539437934">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="3256569870">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=Fy8OeQ7WsgOFSjMloFey2w&amp;s=140&amp;t=1536423272" alt="冷枫" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="冷枫" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=Fy8OeQ7WsgOFSjMloFey2w&amp;s=140&amp;t=1536423272" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="3256569870">冷枫</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">这歌呵呵</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_3256569870_1539437815">
+                <span class="comment__date c_tx_thin">21:36</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_3256569870_1539437815" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_3256569870_1539437815" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="冷枫" data-uin="3256569870" data-cmtid="song_217530992_3256569870_1539437815">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="2260712993">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=czjulYC832Xyul5IGBtEicw&amp;s=140&amp;t=1483347378" alt="默歌尽微凉" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="默歌尽微凉" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=czjulYC832Xyul5IGBtEicw&amp;s=140&amp;t=1483347378" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2260712993">默歌尽微凉</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">杰哥唱歌越来越好听了，永远支持<img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400832.png">
+              </p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2260712993_1539437685">
+                <span class="comment__date c_tx_thin">21:34</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2260712993_1539437685" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2260712993_1539437685" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="默歌尽微凉" data-uin="2260712993" data-cmtid="song_217530992_2260712993_1539437685">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="448625766">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=gF4ZfvWnL0jCDJ7xibf3b0g&amp;s=140&amp;t=1483320024" alt="没有梦想的咸鱼" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="没有梦想的咸鱼" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=gF4ZfvWnL0jCDJ7xibf3b0g&amp;s=140&amp;t=1483320024" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="448625766">没有梦想的咸鱼</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_middle js_hot_text">
+
+                回复 <a href="javascript:;" class="js_nick js_replyed_nick c_tx_current" data-uin="1049216096">@😏😑😏</a>:
+                <span class="js_subcomment">我每天也看娱乐节目新闻的，谁的人气高微博演唱会什么的也看的出，你说出这些话不是脑残是什么？被你吗b夹傻了</span> //
+
+                <a href="javascript:;" class="js_nick js_reply_nick c_tx_current" data-uin="1049216096">@😏😑😏</a> 回复
+                <a href="javascript:;" class="js_nick js_replyed_nick c_tx_current" data-uin="448625766">@没有梦想的咸鱼</a> :
+                <span class="js_subcomment">你说的那两个人，除了在，中国吃老本还能干嘛？ 不把你们这些爹妈供起来 等着过气？ 迈克尔杰克逊的专辑都得买 人家是世界天王 儿子 白嫖去找你的没出息的idol</span>
+
+              </p>
+
+
+              <p class="c_tx_normal comment__text c_tx_thin comment__text--history js_hot_text">周杰伦让粉丝不要花钱买专辑，喜欢听就好，他不靠专辑赚钱，薛之谦发新歌只求粉丝给他四分钟时间把歌听完，再看看这货，不是钱多钱少的问题，有句话说的好，不忘初心，做到了吗？真的缺这点钱？</p>
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_448625766_1539072988_448625766_1539437181">
+                <span class="comment__date c_tx_thin">21:26</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_448625766_1539072988_448625766_1539437181" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_448625766_1539072988_448625766_1539437181" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="没有梦想的咸鱼" data-uin="448625766" data-cmtid="song_217530992_448625766_1539072988_448625766_1539437181">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="306155185">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=CJUP4iak0vIZEaXTAu4CsUQ&amp;s=140&amp;t=1518135938" alt="林子琛" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="林子琛" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=CJUP4iak0vIZEaXTAu4CsUQ&amp;s=140&amp;t=1518135938" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="306155185">林子琛</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">作为一个四川人,你英语那么标准。骄傲</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_306155185_1539436440">
+                <span class="comment__date c_tx_thin">21:14</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_306155185_1539436440" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_306155185_1539436440" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">1</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="林子琛" data-uin="306155185" data-cmtid="song_217530992_306155185_1539436440">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1152921504745652882">
+                <img class="js_lazy_comment_pic" data-original="//thirdwx.qlogo.cn/mmopen/vi_32/VgdPvgIricCfO8LAV7U9j6ZorYficnx0nY2j8wUL6YHibW6hroQXibgN9WfqrTZYIiaTeiaDkrmkS7zFN30T5AOdrWwA/132" alt="永攀高峰" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="永攀高峰" src="//thirdwx.qlogo.cn/mmopen/vi_32/VgdPvgIricCfO8LAV7U9j6ZorYficnx0nY2j8wUL6YHibW6hroQXibgN9WfqrTZYIiaTeiaDkrmkS7zFN30T5AOdrWwA/132" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1152921504745652882">永攀高峰</a>
+
+                <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip4.png?max_age=2592000" alt="绿钻"></span>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">太棒啦<img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png">掌声响起<img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400420.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400420.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400420.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400420.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400420.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400420.png">支持最棒的你<img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png"><img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400408.png">
+              </p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1152921504745652882_1539436381">
+                <span class="comment__date c_tx_thin">21:13</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1152921504745652882_1539436381" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1152921504745652882_1539436381" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="永攀高峰" data-uin="1152921504745652882" data-cmtid="song_217530992_1152921504745652882_1539436381">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="978367061">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=YOCGj6LhhWjic2sLibB6pFxQ&amp;s=140&amp;t=1483366413" alt="L" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="L" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=YOCGj6LhhWjic2sLibB6pFxQ&amp;s=140&amp;t=1483366413" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="978367061">L</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">开头好听，后面一般吧</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_978367061_1539435974">
+                <span class="comment__date c_tx_thin">21:06</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_978367061_1539435974" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_978367061_1539435974" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="L" data-uin="978367061" data-cmtid="song_217530992_978367061_1539435974">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="2389258852">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=GAic7S4wMKpw9hDibS6fFqOQ&amp;s=140&amp;t=1528387256" alt="迷荼" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="迷荼" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=GAic7S4wMKpw9hDibS6fFqOQ&amp;s=140&amp;t=1528387256" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2389258852">迷荼</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">哎，不想充钱</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2389258852_1539435967">
+                <span class="comment__date c_tx_thin">21:06</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2389258852_1539435967" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2389258852_1539435967" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="迷荼" data-uin="2389258852" data-cmtid="song_217530992_2389258852_1539435967">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1152921504689964988">
+                <img class="js_lazy_comment_pic" data-original="//thirdwx.qlogo.cn/mmopen/vi_32/gUoakOVnV9nnGPoSvGKGSn6ZmVibO3CORI9jeDhkZCWW7ZUyddP6MFJ2AXYhuUyJSnYaQg5RC1yuMDqbKpM4Veg/132" alt="🍥" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="🍥" src="//thirdwx.qlogo.cn/mmopen/vi_32/gUoakOVnV9nnGPoSvGKGSn6ZmVibO3CORI9jeDhkZCWW7ZUyddP6MFJ2AXYhuUyJSnYaQg5RC1yuMDqbKpM4Veg/132" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1152921504689964988">🍥</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">挺好听的</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1152921504689964988_1539434626">
+                <span class="comment__date c_tx_thin">20:43</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1152921504689964988_1539434626" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1152921504689964988_1539434626" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="🍥" data-uin="1152921504689964988" data-cmtid="song_217530992_1152921504689964988_1539434626">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1982976638">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=r21s5Pq0mtR2qbWU1TjalA&amp;s=140&amp;t=1520937382" alt="mango" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="mango" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=r21s5Pq0mtR2qbWU1TjalA&amp;s=140&amp;t=1520937382" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1982976638">mango</a>
+
+                <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip1.png?max_age=2592000" alt="绿钻"></span>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">为我杰哥而来</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1982976638_1539434244">
+                <span class="comment__date c_tx_thin">20:37</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1982976638_1539434244" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1982976638_1539434244" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">1</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="mango" data-uin="1982976638" data-cmtid="song_217530992_1982976638_1539434244">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="30274847">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=rKr9fWmrS3I62buz0hobmQ&amp;s=40&amp;t=1483284297" alt="QiQi" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="QiQi" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=rKr9fWmrS3I62buz0hobmQ&amp;s=40&amp;t=1483284297" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="30274847">QiQi</a>
+
+                <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/nsvip5.png?max_age=2592000" alt="绿钻"></span>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">呵呵</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_30274847_1539434012">
+                <span class="comment__date c_tx_thin">20:33</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_30274847_1539434012" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_30274847_1539434012" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="QiQi" data-uin="30274847" data-cmtid="song_217530992_30274847_1539434012">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1692143345">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=v6w0mP5Rb1mWiatiaQP5eq7Q&amp;s=140&amp;t=1520653707" alt="Shine🌟" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="Shine🌟" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=v6w0mP5Rb1mWiatiaQP5eq7Q&amp;s=140&amp;t=1520653707" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1692143345">Shine🌟</a>
+
+                <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip1.png?max_age=2592000" alt="绿钻"></span>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_middle js_hot_text">
+
+                回复 <a href="javascript:;" class="js_nick js_replyed_nick c_tx_current" data-uin="786933673">@苏沫。</a>:
+                <span class="js_subcomment">无聊的很，小喷子<img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400837.png"></span>
+                //
+
+                <a href="javascript:;" class="js_nick js_reply_nick c_tx_current" data-uin="786933673">@苏沫。</a> 回复
+                <a href="javascript:;" class="js_nick js_replyed_nick c_tx_current" data-uin=""></a> :
+                <span class="js_subcomment">你这白眼狼，儿大不由爷阿！</span>
+
+              </p>
+
+
+              <p class="c_tx_normal comment__text c_tx_thin comment__text--history js_hot_text"></p>
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_786933673_1538654497_1692143345_1539432947">
+                <span class="comment__date c_tx_thin">20:15</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_786933673_1538654497_1692143345_1539432947" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_786933673_1538654497_1692143345_1539432947" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="Shine🌟" data-uin="1692143345" data-cmtid="song_217530992_786933673_1538654497_1692143345_1539432947">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1319125404">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=mAhhfIuw5UG1xbggBNW2Nw&amp;s=140&amp;t=1533906447" alt="82" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="82" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=mAhhfIuw5UG1xbggBNW2Nw&amp;s=140&amp;t=1533906447" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1319125404">82</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">好听</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1319125404_1539431838">
+                <span class="comment__date c_tx_thin">19:57</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1319125404_1539431838" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1319125404_1539431838" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">1</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="82" data-uin="1319125404" data-cmtid="song_217530992_1319125404_1539431838">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1626129530">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=5oYDibsyWE6zmhqKTOo3GHQ&amp;s=140&amp;t=1539347754" alt="丫头、厄用①生守护伱" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="丫头、厄用①生守护伱" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=5oYDibsyWE6zmhqKTOo3GHQ&amp;s=140&amp;t=1539347754" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1626129530">丫头、厄用①生守护伱</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">6666</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1626129530_1539431092">
+                <span class="comment__date c_tx_thin">19:44</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1626129530_1539431092" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1626129530_1539431092" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="丫头、厄用①生守护伱" data-uin="1626129530" data-cmtid="song_217530992_1626129530_1539431092">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1152921504831949819">
+                <img class="js_lazy_comment_pic" data-original="//thirdwx.qlogo.cn/mmopen/vi_32/PiajxSqBRaELoVF2tD5VWfFC7s0wWiczp6OnTy5WX2j1XbvcY8fYgLVCjpCNc9QWkNp32amQhaeHc7DvwowSaWdQ/132" alt="A-" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="A-" src="//thirdwx.qlogo.cn/mmopen/vi_32/PiajxSqBRaELoVF2tD5VWfFC7s0wWiczp6OnTy5WX2j1XbvcY8fYgLVCjpCNc9QWkNp32amQhaeHc7DvwowSaWdQ/132" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1152921504831949819">A-</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">无钱可听<img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400372.png">
+              </p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1152921504831949819_1539430661">
+                <span class="comment__date c_tx_thin">19:37</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1152921504831949819_1539430661" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1152921504831949819_1539430661" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">1</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="A-" data-uin="1152921504831949819" data-cmtid="song_217530992_1152921504831949819_1539430661">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="774343061">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=ofDz3ZxIHsAH0lUjuaDMyQ&amp;s=140&amp;t=1539225332" alt="   fuuu" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="   fuuu" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=ofDz3ZxIHsAH0lUjuaDMyQ&amp;s=140&amp;t=1539225332" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="774343061">fuuu</a>
+
+                <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip1.png?max_age=2592000" alt="绿钻"></span>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_middle js_hot_text">
+
+                回复 <a href="javascript:;" class="js_nick js_replyed_nick c_tx_current" data-uin="1434063478">@缓镁汝</a>:
+                <span class="js_subcomment">这歌还不如xzq的呢 你还骄傲了阿傻</span> //
+
+                <a href="javascript:;" class="js_nick js_reply_nick c_tx_current" data-uin="1434063478">@缓镁汝</a> 回复
+                <a href="javascript:;" class="js_nick js_replyed_nick c_tx_current" data-uin="2943861673">@极乐</a> :
+                <span class="js_subcomment">薛之谦的歌好收钱，那真没人听了<img src="//y.gtimg.cn/mediastyle/global/emoji/img/e400372.png"></span>
+
+              </p>
+
+
+              <p class="c_tx_normal comment__text c_tx_thin comment__text--history js_hot_text">薛之谦的歌都不要钱，你们这些明星就是要钱。</p>
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2943861673_1539423608_774343061_1539428538">
+                <span class="comment__date c_tx_thin">19:02</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2943861673_1539423608_774343061_1539428538" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2943861673_1539423608_774343061_1539428538" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="   fuuu" data-uin="774343061" data-cmtid="song_217530992_2943861673_1539423608_774343061_1539428538">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1520890813">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=KhpfD6NVGsjuJQyUpqTuhw&amp;s=140&amp;t=1539259799" alt="my sunshine" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="my sunshine" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=KhpfD6NVGsjuJQyUpqTuhw&amp;s=140&amp;t=1539259799" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1520890813">my sunshine</a>
+
+                <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/nsvip4.png?max_age=2592000" alt="绿钻"></span>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_middle js_hot_text">
+
+                回复 <a href="javascript:;" class="js_nick js_replyed_nick c_tx_current" data-uin="1830504231">@^</a>:
+                <span class="js_subcomment">jie</span>
+              </p>
+
+
+              <p class="c_tx_normal comment__text c_tx_thin comment__text--history js_hot_text">Live ls
+                drean—一是做梦,是幻层,是不被缺憾侵染的工整;是熵增,是守恒,是无药可救者唯一出逃的裂缝。<br>Live ls
+                Thought-一是思想,是坚强,是控诉时无意扣动扳机的枪;是信仰,是归乡,是用声音描摹的意象。<br>Live ls
+                Change-一是变化,是迸发,是等待与寻找间,偷偷盛开的野花;是扼杀,是挣扎,是一往无前早已了却的牵挂<br>Live Is
+                Karma--是因果,是争夺,是走过轮回尽头的超脱;是枷锁,是迷惑,是世事如烟,不灭的业火<br>Live Is
+                soul--是灵魂,是囚困,是扪心自问语焉不详的含混;是翻滚,是沉沦,是被沉默消解殆尽,洗尽铅华的黄昏</p>
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1830504231_1538105308_1520890813_1539427811">
+                <span class="comment__date c_tx_thin">18:50</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1830504231_1538105308_1520890813_1539427811" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1830504231_1538105308_1520890813_1539427811" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="my sunshine" data-uin="1520890813" data-cmtid="song_217530992_1830504231_1538105308_1520890813_1539427811">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1250122930">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=LOtqiaBX4oeUpWVvzb1cwJg&amp;s=140&amp;t=1537371147" alt="Never." onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="Never." src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=LOtqiaBX4oeUpWVvzb1cwJg&amp;s=140&amp;t=1537371147" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1250122930">Never.</a>
+
+                <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/nsvip3.png?max_age=2592000" alt="绿钻"></span>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">真的难听，欣赏不来</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1250122930_1539426932">
+                <span class="comment__date c_tx_thin">18:35</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1250122930_1539426932" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1250122930_1539426932" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">2</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="Never." data-uin="1250122930" data-cmtid="song_217530992_1250122930_1539426932">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="2514971877">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=dFs3uYJKQYVuPKeNfrU22w&amp;s=140&amp;t=1539009722" alt="算命先生说我命缺你" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="算命先生说我命缺你" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=dFs3uYJKQYVuPKeNfrU22w&amp;s=140&amp;t=1539009722" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2514971877">算命先生说我命缺你</a>
+
+                <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/svip2.png?max_age=2592000" alt="绿钻"></span>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_middle js_hot_text">
+
+                回复
+                <a href="javascript:;" class="js_nick js_replyed_nick c_tx_current" data-uin="1152921504835404420">@秋天</a>:
+                <span class="js_subcomment">你没钱啊</span>
+              </p>
+
+
+              <p class="c_tx_normal comment__text c_tx_thin comment__text--history js_hot_text">还他妈收费，</p>
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1152921504835404420_1539422121_2514971877_1539425957">
+                <span class="comment__date c_tx_thin">18:19</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1152921504835404420_1539422121_2514971877_1539425957" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1152921504835404420_1539422121_2514971877_1539425957" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">0</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="算命先生说我命缺你" data-uin="2514971877" data-cmtid="song_217530992_1152921504835404420_1539422121_2514971877_1539425957">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="1249324000">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=t727vNCbyJRic8QrWQLftYQ&amp;s=140&amp;t=1516883608" alt="阿九□" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="阿九□" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=t727vNCbyJRic8QrWQLftYQ&amp;s=140&amp;t=1516883608" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="1249324000">阿九□</a>
+
+                <span class="vip_icon"><img src="//y.gtimg.cn/music/icon/v1/pc/vip6.png?max_age=2592000" alt="绿钻"></span>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">这么难听，还要花钱听</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_1249324000_1539425838">
+                <span class="comment__date c_tx_thin">18:17</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_1249324000_1539425838" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_1249324000_1539425838" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">7</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="阿九□" data-uin="1249324000" data-cmtid="song_217530992_1249324000_1539425838">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li " style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="2021136698">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=iboQQZqYtiaIQJu6DMr6yreA&amp;s=140&amp;t=1539427344" alt="没有后来" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="没有后来" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=iboQQZqYtiaIQJu6DMr6yreA&amp;s=140&amp;t=1539427344" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2021136698">没有后来</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_hot_text">拉鸡</p>
+
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2021136698_1539424739">
+                <span class="comment__date c_tx_thin">17:58</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2021136698_1539424739" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2021136698_1539424739" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">1</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="没有后来" data-uin="2021136698" data-cmtid="song_217530992_2021136698_1539424739">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+            <li class="comment__list_item c_b_normal js_cmt_li" style="visibility: visible;">
+              <a href="javascript:;" class="comment__avatar js_nick" data-uin="2766630063">
+                <img class="js_lazy_comment_pic" data-original="//thirdqq.qlogo.cn/g?b=sdk&amp;k=jNiaghTZ8xxNmiaN42U2gBBw&amp;s=140&amp;t=1536235897" alt="瘾男" onerror="this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null" title="瘾男" src="//thirdqq.qlogo.cn/g?b=sdk&amp;k=jNiaghTZ8xxNmiaN42U2gBBw&amp;s=140&amp;t=1536235897" style="display: block; visibility: visible;">
+
+              </a>
+              <h4 class="comment__title">
+                <a href="javascript:;" class="c_tx_thin js_nick js_nick_only" data-uin="2766630063">瘾男</a>
+
+
+              </h4>
+
+
+              <p class="c_tx_normal comment__text js_middle js_hot_text">
+
+                回复 <a href="javascript:;" class="js_nick js_replyed_nick c_tx_current" data-uin="2582918066">@浅忆往昔</a>:
+                <span class="js_subcomment">不爽来打我啊⊙▽⊙</span> //
+
+                <a href="javascript:;" class="js_nick js_reply_nick c_tx_current" data-uin="2582918066">@浅忆往昔</a> 回复
+                <a href="javascript:;" class="js_nick js_replyed_nick c_tx_current" data-uin="2766630063">@瘾男</a> :
+                <span class="js_subcomment">就是 难听你还bb什么   你有本事你唱啊   我最讨厌你们这种喷子了
+</span>
+
+              </p>
+
+
+              <p class="c_tx_normal comment__text c_tx_thin comment__text--history js_hot_text">张杰唱的歌这么难听，还他妈要绿钻，我他妈都想吐了</p>
+
+              <div class="comment__opt js_comment_opt" data-commentid="song_217530992_2766630063_1539404094_2766630063_1539424613">
+                <span class="comment__date c_tx_thin">17:56</span>
+
+                <a class="comment__report js_cmt_accusation" data-commentid="song_217530992_2766630063_1539404094_2766630063_1539424613" href="javascript:;">举报</a>
+
+
+                <a class="comment__zan js_cmt_praise " data-commentid="song_217530992_2766630063_1539404094_2766630063_1539424613" href="javascript:;"><i class="icon_comment icon_comment_like"></i><span class="js_praise_num">3</span></a>
+                <a class="comment__feedback js_feedback icon_comment icon_comment_feedback" href="javascript:;" data-nick="瘾男" data-uin="2766630063" data-cmtid="song_217530992_2766630063_1539404094_2766630063_1539424613">回复</a>
+
+              </div>
+              <div class="js_reply_container"></div>
+            </li>
+
+          </ul>
+
+          <div class="mod_page_nav js_pager_comment">
+            <strong class="current">1</strong><a href="javascript:;" class="js_pageindex" data-index="2" hidefocus="">2</a><a href="javascript:;" class="js_pageindex" data-index="3" hidefocus="">3</a><a href="javascript:;" class="js_pageindex" data-index="4" hidefocus="">4</a><strong class="more">...</strong><a href="javascript:;" class="js_pageindex" data-index="269" hidefocus="">269</a><a href="javascript:;" class="next js_pageindex" data-index="2" title="下一页" hidefocus=""><span>&gt;</span></a>
+          </div>
+
+        </div>
+        <p class="comment__rule"><a class="js_rule_btn" href="javascript:;">QQ音乐评论指北</a></p></div>
+    </div>
+    <div class="detail_layout__other">
+      <div class="mod_about" id="album_desc" style="display:none;">
+        <h3 class="about__tit">简介</h3>
+        <div class="about__cont"></div>
+        <a href="javascript:;" class="about__more" data-stat="y_new.song.moreinfo" data-left="0" data-top="-185" data-target="popup_data_detail" style="display: none;">[更多]</a>
+      </div>
+
+
+      <div class="other_part" style="display:none;" id="song_playlist">
+        <h3 class="other_part__tit">包含此单曲的热门歌单</h3>
+        <div class="mod_playlist">
+          <ul class="playlist__list">
+          </ul>
+        </div>
+      </div>
+
+      <div class="other_part" id="song_mv">
+      </div>
+    </div>
+
+  </div>
+  <div class="popup_data_detail" id="popup_data_detail" style="display:none;">
+    <div class="popup_data_detail__cont"><h3 class="popup_data_detail__tit">专辑简介</h3>
+      <p></p></div>
+    <i class="popup_data_detail__arrow"></i>
+  </div>
+</div>
+
+
+<%= render :partial => 'layouts/foot' %>
 
 
 
-
-<!--<button id="play">播放</button>-->
-<!--<button id="pause">暂停</button>-->
-<button id="next">下一首</button>
-<button id="pre">上一首</button>
-<button id="down">快退五秒</button>
-<button id="spree">快进五秒</button>
-
-<br>
-<button id="new">最新</button>
-<input type="text" id="texts">
-<input type="text" id="page" value=1>
-<button id="search">search</button>
-<br>
-
-<button id="random">随机推荐的音乐</button>
-<button id="top">根据榜单ID获得榜单的歌曲列表</button>
-<br>
-<br>
-
-
-
-
-
-
-
-
-<% for i in 0..99 %>
-
-  <div id="demo<%= i %>" style="color: black;">1</div>
-  <button id="play_music<%= i %>" value="" songmid="">播放</button>
-  <button id="payplay<%= i %>" value=""></button>
-  <br>
-  <img src="" id="image<%= i %>">
-<% end %>
-
-
-<script src="https://y.gtimg.cn/music/h5/client/jsbridge.js?max_age=2592000"></script>
 
 <script>
+    //获取传过来的index页面传过来id
+    console.log(window.location.href);
+    var str = window.location.href;
+    var index = str.lastIndexOf("\/");
+    str = str.substring(index + 1, str.length);
+    var  id = str
 
 
-    var params = {
-        target: "auto"
-    };
-    var player = new QMplayer(params);
-    // console.log(player.state);
-    // console.log(player.data);
-    // console.log(player.currentTime);
-    // console.log(player.duration);
-    // console.log(player.version);
 
-
-    document.getElementById("pause").onclick = function () {
-        player.pause();
-    }
-    document.getElementById("next").onclick = function () {
-        player.palyeNext();
-    }
-    document.getElementById("pre").onclick = function () {
-        player.playePre();
-    }
-    document.getElementById("spree").onclick = function () {
-        player.currentTime = player.currentTime + 5;
-    }
-    document.getElementById("down").onclick = function () {
-        player.currentTime = player.currentTime - 5;
-    }
-
-
-</script>
-<script type="text/javascript">
-    //最新音乐
-
-    let url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=27&_=1519963122923';
+    //   新歌首发
     $.ajax({
-        url: url,
+        url: "https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=27&_=1519963122923",
         type: "get",
         dataType: 'jsonp',
+        cache: false,
+        async: false,   // 太关键了，学习了，同步和异步的参数
         jsonp: "jsonpCallback",
         scriptCharset: 'GBK',//解决中文乱码
         success: function (data) {
             //最新音乐数据
+            var cur_song_num = data.cur_song_num; //获取最新歌曲的长度
             console.log(data);
 
+            //console.log(data.songlist[i].data.albumname);
+            //console.log(i);
+            //获取图片的mid
+            var albummid = data.songlist[id].data.albummid;
+            $("#image").attr('src', "https://y.gtimg.cn/music/photo_new/T002R300x300M000" + albummid + ".jpg?max_age=2592000");
+            $("#image").attr('alt', data.songlist[id].data.albumname);
 
-            for (var i = 0; i < data.songlist.length; i++) {
-                //console.log(data.songlist[i].data.albumname);
-                var cur_song_num = data.cur_song_num; //获取最新歌曲的长度
+            //获取歌曲名字
+            //document.getElementById("demo" + i).innerHTML = data.songlist[i].data.albumname;
+            $("#title").html(data.songlist[id].data.albumname);
+            $("#title").attr('title', data.songlist[id].data.albumname);
+            //
+            //
+            //     //当鼠标移到歌曲封面显示歌曲名字
+            //     $("#title_songname" + id).attr("title", data.songlist[i].data.albumname)
+            //
+            //获取歌手的名字
+            $("#singername").html(data.songlist[id].data.singer[0].name);
+            $("#singername").attr('title', data.songlist[id].data.singer[0].name);
+            //获取专辑的名字
 
+            $("#albumname").html(data.songlist[id].data.albumname);
+            $("#albumname").attr('title', data.songlist[id].data.albumname);
 
-                //获取图片的mid
-                var albummid = data.songlist[i].data.albummid;
-                var image_url = document.getElementById('image' + i);
-                image_url.src = "https://y.gtimg.cn/music/photo_new/T002R300x300M000" + albummid + ".jpg?max_age=2592000";
-
-                //获取歌曲名字
-                document.getElementById("demo" + i).innerHTML = data.songlist[i].data.albumname;
-
-
-                //获取歌曲的songmid
-
-                var button_play = document.getElementById("play_music" + i);
-                button_play.value = data.songlist[i].data.songmid; //把songmid添加到button_play[i]的value
-                document.getElementById("play_music" + i).onclick = function () {
-
-                    var button_play_value = $(this).attr("value");//获取到当前按钮的value
-
-                    player.play(button_play_value);
-
-                };
-
-                //获取歌曲可以不可以播放的状态，当payplay:1是不可播放状态
-                console.log(data.songlist[i].data.pay.payplay);
-                var payplay = document.getElementById("payplay" + i);//获取可不可以播放的
-                payplay.value = data.songlist[i].data.pay.payplay;
-                if (payplay.value == "1") {
-                    $("#demo" + i).css("background", "red")
-                    $("#payplay" + i).html("不可播放");
-                } else {
-                    $("#demo" + i).css("background", "green")
-                    $("#payplay" + i).html("可播放");
-                }
+            //console.log(data.songlist[id].data.songmid);
+            var songmid=data.songlist[id].data.songmid;
+            $("#songmid").attr('title', songmid);
 
 
-                //获取id
-                var demo = document.getElementById("demo" + i).id;
 
+            var songmids = $("#songmid").attr('title');
+            //是否为付费歌曲
+            // var payplay = document.getElementById("pay" );//获取可不可以播放的
+            // payplay.value = data.songlist[id].data.pay.payplay;
+            // if (payplay.value == "1") {
+            //     //$("#demo" + i).css("background", "red")
+            //     $("#pay" ).html("付费歌曲");
+            //
+            // } else {
+            //     // $("#demo" + i).css("background", "green")
+            //     $("#pay" + i).html("免费播放");
+            // }
+            // if (payplay.value == "1") {
+            //     $("#pay").click(function () {
+            //         alert("应版权方要求不能免费播放，可开通付费音乐包后畅享");
+            //     });
+            // }
+            var ispay=data.songlist[id].data.pay.payplay;
+            console.log(ispay);
+            if (ispay==1){
+                $("#pay" ).html("付费歌曲");
+            } else if(ispay==0){
+                $("#pay" ).html("免费播放");
             }
-            // console.log(data.code);
-            // console.log(data.color);
+
+
 
         },
         error: function (e) {
@@ -140,74 +1526,334 @@
         }
     });
 
-    //歌曲搜索
-    document.getElementById("search").onclick = function () {
-        var song = document.getElementById("texts");
 
-        var songName = song.value;//歌曲或者歌手名字
-
-
-        var page = document.getElementById("page");
-
-        var pagenum = page.value; //修改页数
-        var pages = parseInt(pagenum);
-        console.log("http://s.music.qq.com/fcgi-bin/music_search_new_platform?t=0& n=5&aggr=1&cr=1&loginUin=0& inCharset=GB2312&outCharset=utf-8&notice=0& platform=jqminiframe.json&needNewCode=0&p=" + pages + "&catZhida=0& remoteplace=sizer.newclient.next_song&w=" + songName);
-
-        $.ajax({
-            url: "http://s.music.qq.com/fcgi-bin/music_search_new_platform?t=0& n=5&aggr=1&cr=1&loginUin=0& inCharset=GB2312&outCharset=utf-8&notice=0& platform=jqminiframe.json&needNewCode=0&p=" + pages + "&catZhida=0& remoteplace=sizer.newclient.next_song&w=" + songName,
-            type: "get",
-            // async:false,
-            dataType: 'jsonp',
-            jsonp: "jsonpCallback",
-            success: function (data) {
-                // var json = data.data.song;
-                //root.song = json.list;
-                console.log(data);
-
-            },
-            error: function (e) {
-                console.log('error');
-            }
-        });
-    }
-    //推荐音乐
-    document.getElementById("random").onclick = function () {
-        let url = 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8¬ice=0&platform=h5&needNewCode=1&tpl=3&page=detail&type=top&topid=36&_=1520777874472';
-        $.ajax({
-            url: url,
-            type: "get",
-            // async:false,
-            dataType: 'jsonp',
-            jsonp: "jsonpCallback",
-            success: function (data) {
-                // var json = data.data.song;
-                //root.song = json.list;
-                console.log(data);
-
-            },
-            error: function (e) {
-                console.log('error');
-            }
-        });
-    }
-    //根据榜单ID获得榜单的歌曲列表AP
-    document.getElementById("top").onclick = function () {
-        let url = 'https://c.y.qq.com/v8/fcg-bin/fcg_myqq_toplist.fcg?g_tk=1928093487&inCharset=utf-8&outCharset=utf-8&notice=0&format=jsonp&uin=0&needNewCode=1&platform=h5';
-        $.ajax({
-            url: url,
-            type: "get",
-            dataType: 'jsonp',
-            jsonp: "jsonpCallback",
-            scriptCharset: 'GBK',//解决中文乱码
-            success: function (data) {
-                //推荐音乐数据
-                console.log(data)
-            },
-            error: function (e) {
-                console.log('error');
-            }
-        });
-    }
 
 
 </script>
+
+//获取歌词
+<script>
+function f() {
+
+
+
+    var songmid = $("#songmid").attr('title');
+
+    var url_song = "https://route.showapi.com/213-2?showapi_appid=54411&showapi_sign=55b7ca99e210452a86269a9f09def34c&musicid=" + songmid + "";
+    $.ajax({
+        url: url_song,
+        type: "get",
+        dataType: 'json',
+
+        scriptCharset: 'GBK',//解决中文乱码
+        success: function (data) {
+            //获取歌词
+          // console.log(data.showapi_res_body.lyric);
+           //console.log(data.showapi_res_body.lyric_txt);
+            var s=data.showapi_res_body.lyric;
+            $("#lyric").text(s);
+
+            if(typeof binlyric != 'object') {binlyric = {};}
+            binlyric = {
+                edition:"1.1",
+                obj:"",
+                lyricCSS:new Object(),
+                txt:"",
+                index:0,
+                time:new Array(),
+                lyric:new Array(),
+                sort:function(){ // 冒泡排序（从小到大）
+                    var third;
+                    for(var j=0;j<this.index-1;j++)
+                    {
+                        for(var i=0;i<this.index-1;i++)
+                        {
+                            if(this.time[i]>this.time[i+1])
+                            {
+                                third = this.time[i];
+                                this.time[i] = this.time[i+1];
+                                this.time[i+1] = third;
+                                third = this.lyric[i];
+                                this.lyric[i] = this.lyric[i+1];
+                                this.lyric[i+1] = third;
+                            }
+                        }
+                    }
+                },
+                createPanel:function(){ // 创建歌词面板
+                    var i=0;
+                    $(this.obj).html("");
+                    for(i=0;i<this.index;i++)
+                    {
+                        $(this.obj).append("<div>"+this.lyric[i]+"</div>");
+                    }
+                    for(i in this.lyricCSS)
+                    {
+                        $(this.obj).find("div").css(this.lyricCSS,this.lyricCSS[i]);
+                    }
+                },
+                findTags:function(index,strArray,number){ // 查找标签（包括任何扩展的标签）
+                    // 此方法能匹配所有格式的标签
+                    // 因为此方法是在后面写的，所以时间标签并没有使用此方法
+                    number = number || this.txt.length;
+                    number = (number>this.txt.length) ? this.txt.length:number;
+                    var i,j,complete=0,value;
+                    var obj = new Object();
+                    obj.booble = false;
+                    obj.value = "[";
+                    for(i=index;i<number;i++)
+                    {
+                        if(this.txt.substr(i,1)==strArray[complete].s)
+                        {
+                            complete+=1;
+                            if(complete>1)
+                            {
+                                if(complete<strArray.length)
+                                {
+                                    obj.value += '{value:"'+this.txt.substr(value+1,i-value-1)+'"},';
+                                }
+                                else
+                                {
+                                    obj.value += '{value:"'+this.txt.substr(value+1,i-value-1)+'"}]';
+                                }
+                            }
+                            if(complete==strArray.length)
+                            {
+                                obj.txt = this.txt.substr(index,i-index+1);
+                                obj.value = eval('('+obj.value+')');
+                                obj.index = i+1;
+                                obj.booble = true;
+                                break
+                            }
+                            value = i;
+                        }
+                        else if(this.txt.substr(i,1)=="\n")
+                        {
+                            obj.booble = false;
+                            return obj;
+                        }
+                        else if(this.txt.substr(i,1)==strArray[0].s && complete>0) // 遇到2次开始标志就退出
+                        {
+                            obj.booble = false;
+                            return obj;
+                        }
+                    }
+                    return obj;
+                },
+                findlyric:function(index){ // 查找歌词： 有则返回 歌词、继续查找的位置， 否则只返回继续查找的位置
+                    var obj = {};
+                    var str = this.txt;
+                    var i;
+                    for(i=index;i<str.length;i++)
+                    {
+                        if(str.charAt(i)=="[")
+                        {
+                            var _obj = this.findTags(i,[{s:"["},{s:":"},{s:"]"}]);
+                            if(_obj.booble)
+                            {
+                                obj.index = i;//i + _obj.txt.length;
+                                obj.lyric = str.substr(index,i-index);
+                                return obj;
+                            }
+                        }
+                        else if(str.charAt(i)=="\n")
+                        {
+                            obj.index = i+1;
+                            obj.lyric = str.substr(index,i-index);
+                            return obj
+                        }
+                    }
+                    if(i==str.length) // 专处理最后一句歌词（最后一句歌词比较特殊）
+                    {
+                        obj.index = i+1;
+                        obj.lyric = str.substr(index,i-index);
+                        return obj;
+                    }
+                    obj.index = i;
+                    return obj;
+                },
+                findTime:function(index){ // 查找时间 ： 有则返回 时间、继续查找的位置， 否则只返回继续查找的位置
+                    // 此功能可以用 findTags 方法实现，更简单、更强大、代码更少
+                    // findTags方法 是在后面写的，所以这里就不改了，具体可参考 findID方法里的使用实例
+                    var obj = {};
+                    var thisobj = this;
+                    var str = this.txt;
+                    obj.index = index;
+                    function recursion()
+                    {
+                        var _obj = thisobj.findTime(obj.index);
+                        if(_obj.time)
+                        {
+                            obj.time += _obj.time;
+                            obj.index = _obj.index;
+                        }
+                    }
+                    // --------------- 可以在这里 扩展 其它功能 ---------------
+                    // lrc歌词只能精确到每句歌词，可以通过扩展lrc 精确 到 每个字
+                    if(/\[\d{1,2}\:\d{1,2}\.\d{1,2}\]/.test(str.substr(index,10))) // [mm:ss.ff]
+                    {
+                        obj.time = str.substr(index+1,8) + "|";
+                        obj.index = index+9+1;
+                        recursion();
+                    }
+                    else if(/\[\d{1,2}\:\d{1,2}\]/.test(str.substr(index,7))) // [mm:ss]
+                    {
+                        obj.time = str.substr(index+1,5) + ".00" + "|";
+                        obj.index = index+6+1;
+                        recursion();
+                    }
+                    // 以下标签均属于合法标签，但很少被使用，请根据需要进行扩展
+                    // [mm:ss.f] [mm:s.ff] [mm:s.f] [m:ss.ff] [m:s.ff] [m:s.f]
+                    // [mm:s] [m:ss] [s:s]
+                    return obj;
+                },
+                findID:function(index){ // 查找预定义标识
+                    //[ar:艺人名]
+                    //[ti:曲名]
+                    //[al:专辑名]
+                    //[by:编者（指编辑LRC歌词的人）]
+                    //[offset:时间补偿值] 其单位是毫秒，正值表示整体提前，负值相反。这是用于总体调整显示快慢的。（很少被使用）
+                    // 注：本程序也不支持 offset 功能（但是能取值），如需要 请自行在 sort 方法添加此功能
+                    // 此处功能 使用 findTags方法 实现
+                    var obj;
+                    obj = this.findTags(index,[{s:"["},{s:":"},{s:"]"}]);
+                    if(obj.booble)
+                    {
+                        if(obj.value[0].value=="ar")
+                        {
+                            this.ar = obj.value[1].value;
+                        }
+                        else if(obj.value[0].value=="ti")
+                        {
+                            this.ti = obj.value[1].value;
+                        }
+                        else if(obj.value[0].value=="al")
+                        {
+                            this.al = obj.value[1].value;
+                        }
+                        else if(obj.value[0].value=="by")
+                        {
+                            this.by = obj.value[1].value;
+                        }
+                        else if(obj.value[0].value=="offset") // 这里是 offset 的值
+                        {
+                            this.offset = obj.value[1].value;
+                        }
+                    }
+                },
+                analysis:function(){ // 解析
+                    if(this.txt=="") return false;
+                    var str = this.txt;
+                    this.index = 0;
+                    for(var i=0;i<str.length;i++)
+                    {
+                        if(str.charAt(i)=="[")
+                        {
+                            var time = this.findTime(i);
+                            if(time.time) // 时间标签
+                            {
+                                var lyric = this.findlyric(time.index);
+                                if(lyric.lyric!="\n" && lyric.lyric!="") // 去掉无意义歌词
+                                {
+                                    var timeArray = time.time.split("|");
+                                    for(var j=0;j<timeArray.length;j++)
+                                    {
+                                        if(timeArray[j])
+                                        {
+                                            this.time[this.index] = timeArray[j];
+                                            this.lyric[this.index] = lyric.lyric;
+                                            this.index+=1;
+                                        }
+                                    }
+                                }
+                                i = time.index;
+                            }
+                            else // 预定义标签
+                            {
+                                this.findID(i);
+                            }
+                        }
+                    }
+                    this.sort();
+                    this.createPanel();
+                },
+                play:function(position,CSS){ // 定位指定时间的歌词
+                    var time;
+                    var obj = this;
+                    function set(index)
+                    {
+                        var height = parseInt($(obj.obj).find("div").css("height"));
+                        var top = parseInt($(obj.obj).find("div").css("margin-top"));
+                        $(obj.obj).animate({
+                            scrollTop:(index*height+index*top-parseInt($(obj.obj).css("height"))/2+height/2)
+                        },300);
+                        for(var i in CSS)
+                        {
+                            $(obj.obj).find("div").eq(index).css(CSS,CSS[i]);
+                        }
+                    }
+                    for(var i=0;i<this.index;i++)
+                    {
+                        if(position==this.time[i])
+                        {
+                            Set(i);
+                            return;
+                        }
+                        else if(position>this.time[i])
+                        {
+                            time = i;
+                        }
+                    }
+                    set(time);// 没找到匹配时间 则就近最小选择
+                }
+            };
+
+            binlyric.txt = s;
+            binlyric.obj = ".lyric__cont_box";
+            binlyric.lyricCSS = {"font-size":"12px","margin-top":"1px","text-align":"left"};
+            binlyric.analysis();
+            binlyric.play("00:00.01",{
+                color:"red"
+            });
+            // alert("艺人名："+binlyric.ar);
+            // alert("专辑名："+binlyric.al);
+            // alert("歌词编者："+binlyric.by);
+            // alert("歌曲名："+binlyric.ti);
+            console.log(s)
+
+           // $("#lyric").toggle();
+
+
+
+
+        }, error: function (e) {
+            console.log(e);
+        }
+    });
+
+    function parseLyric(text) {
+        var lyrics = text.split('\r\n');
+        var lrcObj = {};
+        for(var i=0;i<lyrics.length;i++){
+            var lyric = decodeURIComponent(lyrics[i]);
+            var timeReg = /\[\d*:\d*((\.|\:)\d*)*\]/g;
+            var timeRegExpArr = lyric.match(timeReg);
+            if(!timeRegExpArr)continue;
+            var clause = lyric.replace(timeReg,'');
+            for(var k = 0,h = timeRegExpArr.length;k < h;k++) {
+                var t = timeRegExpArr[k];
+                var min = Number(String(t.match(/\[\d*/i)).slice(1)),
+                    sec = Number(String(t.match(/\:\d*/i)).slice(1));
+                var time = min * 60 + sec;
+                lrcObj[time] = clause;
+            }
+        }
+        return lrcObj;
+        console.log(lrcObj)
+    }
+}
+
+</script>
+
+
+

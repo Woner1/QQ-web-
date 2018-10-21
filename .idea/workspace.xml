@@ -29,29 +29,30 @@
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/search/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="229" column="284" selection-start-line="229" selection-start-column="284" selection-end-line="229" selection-end-column="284" />
+            <state relative-caret-position="209">
+              <caret line="688" lean-forward="true" selection-start-line="688" selection-end-line="688" />
               <folding>
                 <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#li#0;n#ul#1;n#div#1;n#div#3;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="e#17578#17711#0#HTML" />
-                <element signature="e#18234#18461#0#HTML" />
-                <element signature="e#18505#18769#0#HTML" />
-                <element signature="e#18813#19077#0#HTML" />
-                <element signature="e#19121#19385#0#HTML" />
-                <element signature="e#19429#19693#0#HTML" />
-                <element signature="e#19737#20001#0#HTML" />
-                <element signature="e#20045#20309#0#HTML" />
-                <element signature="e#20353#20617#0#HTML" />
-                <element signature="e#20662#20931#0#HTML" />
-                <element signature="e#20975#21244#0#HTML" />
-                <element signature="e#21299#21568#0#HTML" />
-                <element signature="e#21604#21873#0#HTML" />
-                <element signature="e#21918#22187#0#HTML" />
-                <element signature="e#22232#22501#0#HTML" />
-                <element signature="e#22546#22815#0#HTML" />
-                <element signature="e#22860#23129#0#HTML" />
-                <element signature="e#23174#23443#0#HTML" />
-                <element signature="e#23488#23757#0#HTML" />
+                <element signature="e#17398#17507#0#HTML" />
+                <element signature="e#18165#18533#0#HTML" />
+                <element signature="e#18577#18945#0#HTML" />
+                <element signature="e#18989#19357#0#HTML" />
+                <element signature="e#19401#19769#0#HTML" />
+                <element signature="e#19813#20181#0#HTML" />
+                <element signature="e#20225#20593#0#HTML" />
+                <element signature="e#20637#21005#0#HTML" />
+                <element signature="e#21049#21417#0#HTML" />
+                <element signature="e#21461#21829#0#HTML" />
+                <element signature="e#21874#22249#0#HTML" />
+                <element signature="e#22294#22669#0#HTML" />
+                <element signature="e#22714#23089#0#HTML" />
+                <element signature="e#23134#23509#0#HTML" />
+                <element signature="e#23553#23928#0#HTML" />
+                <element signature="e#23982#24357#0#HTML" />
+                <element signature="e#24394#24769#0#HTML" />
+                <element signature="e#24814#25189#0#HTML" />
+                <element signature="e#25234#25609#0#HTML" />
+                <element signature="e#25654#26029#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -70,7 +71,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;%</find>
       <find>src</find>
       <find>audio</find>
       <find>music</find>
@@ -100,6 +100,7 @@
       <find>displ</find>
       <find>songlist__song_txt</find>
       <find>js_song</find>
+      <find>gift</find>
     </findStrings>
     <dirStrings>
       <dir>D:\project\qq-music</dir>
@@ -382,7 +383,7 @@
       <workItem from="1539871526286" duration="4882000" />
       <workItem from="1539915380702" duration="68000" />
       <workItem from="1540026831624" duration="16332000" />
-      <workItem from="1540082550311" duration="13583000" />
+      <workItem from="1540082550311" duration="14893000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <created>1539011705066</created>
@@ -412,11 +413,25 @@
       <option name="project" value="LOCAL" />
       <updated>1540096845161</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="master">
+      <created>1540097025251</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1540097025251</updated>
+    </task>
+    <task id="LOCAL-00006" summary="finsh">
+      <created>1540097709581</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1540097709581</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205693000" />
+    <option name="totallyTimeSpent" value="207003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -424,12 +439,12 @@
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="调试" order="7" weight="0.4280992" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50226927" side_tool="true" weight="0.39008266" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5030257" side_tool="true" weight="0.3123967" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4977307" visible="true" weight="0.3123967" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4969743" visible="true" weight="0.3123967" />
       <window_info anchor="bottom" id="运行" order="7" weight="0.32838285" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2579425" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2579425" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -478,7 +493,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mailer" />
     <MESSAGE value="master" />
-    <option name="LAST_COMMIT_MESSAGE" value="master" />
+    <MESSAGE value="finsh" />
+    <option name="LAST_COMMIT_MESSAGE" value="finsh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -820,29 +836,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/search/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="229" column="284" selection-start-line="229" selection-start-column="284" selection-end-line="229" selection-end-column="284" />
+        <state relative-caret-position="209">
+          <caret line="688" lean-forward="true" selection-start-line="688" selection-end-line="688" />
           <folding>
             <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#li#0;n#ul#1;n#div#1;n#div#3;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#17578#17711#0#HTML" />
-            <element signature="e#18234#18461#0#HTML" />
-            <element signature="e#18505#18769#0#HTML" />
-            <element signature="e#18813#19077#0#HTML" />
-            <element signature="e#19121#19385#0#HTML" />
-            <element signature="e#19429#19693#0#HTML" />
-            <element signature="e#19737#20001#0#HTML" />
-            <element signature="e#20045#20309#0#HTML" />
-            <element signature="e#20353#20617#0#HTML" />
-            <element signature="e#20662#20931#0#HTML" />
-            <element signature="e#20975#21244#0#HTML" />
-            <element signature="e#21299#21568#0#HTML" />
-            <element signature="e#21604#21873#0#HTML" />
-            <element signature="e#21918#22187#0#HTML" />
-            <element signature="e#22232#22501#0#HTML" />
-            <element signature="e#22546#22815#0#HTML" />
-            <element signature="e#22860#23129#0#HTML" />
-            <element signature="e#23174#23443#0#HTML" />
-            <element signature="e#23488#23757#0#HTML" />
+            <element signature="e#17398#17507#0#HTML" />
+            <element signature="e#18165#18533#0#HTML" />
+            <element signature="e#18577#18945#0#HTML" />
+            <element signature="e#18989#19357#0#HTML" />
+            <element signature="e#19401#19769#0#HTML" />
+            <element signature="e#19813#20181#0#HTML" />
+            <element signature="e#20225#20593#0#HTML" />
+            <element signature="e#20637#21005#0#HTML" />
+            <element signature="e#21049#21417#0#HTML" />
+            <element signature="e#21461#21829#0#HTML" />
+            <element signature="e#21874#22249#0#HTML" />
+            <element signature="e#22294#22669#0#HTML" />
+            <element signature="e#22714#23089#0#HTML" />
+            <element signature="e#23134#23509#0#HTML" />
+            <element signature="e#23553#23928#0#HTML" />
+            <element signature="e#23982#24357#0#HTML" />
+            <element signature="e#24394#24769#0#HTML" />
+            <element signature="e#24814#25189#0#HTML" />
+            <element signature="e#25234#25609#0#HTML" />
+            <element signature="e#25654#26029#0#HTML" />
           </folding>
         </state>
       </provider>

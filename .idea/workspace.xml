@@ -2,30 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc30c81-7aeb-4289-b084-52b5d4a3a00b" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/devise/confirmations_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/devise/omniauth_callbacks_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/devise/passwords_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/devise/registrations_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/devise/sessions_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/devise/unlocks_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/home/new_song.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/wave.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mailers/user_mailer.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/test.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/test.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_title.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_title.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_mailer/account_activation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_mailer/account_activation.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_mailer/account_activation.text.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_mailer/account_activation.text.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/search_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/search_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/new_song/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/new_song/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/search/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/search/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/search/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/search/show.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,52 +22,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/search/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="storage.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/storage.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/home/test.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3287">
-              <caret line="173" column="37" selection-start-line="173" selection-start-column="37" selection-end-line="173" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/search/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
+            <state relative-caret-position="138">
+              <caret line="653" column="26" lean-forward="true" selection-start-line="653" selection-start-column="26" selection-end-line="653" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/search/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="423" lean-forward="true" selection-start-line="423" selection-end-line="423" />
+              <folding>
+                <element signature="e#17578#17711#0#HTML" />
+                <element signature="e#18234#18461#0#HTML" />
+                <element signature="e#18505#18769#0#HTML" />
+                <element signature="e#18813#19077#0#HTML" />
+                <element signature="e#19121#19385#0#HTML" />
+                <element signature="e#19429#19693#0#HTML" />
+                <element signature="e#19737#20001#0#HTML" />
+                <element signature="e#20045#20309#0#HTML" />
+                <element signature="e#20353#20617#0#HTML" />
+                <element signature="e#20662#20931#0#HTML" />
+                <element signature="e#20975#21244#0#HTML" />
+                <element signature="e#21299#21568#0#HTML" />
+                <element signature="e#21604#21873#0#HTML" />
+                <element signature="e#21918#22187#0#HTML" />
+                <element signature="e#22232#22501#0#HTML" />
+                <element signature="e#22546#22815#0#HTML" />
+                <element signature="e#22860#23129#0#HTML" />
+                <element signature="e#23174#23443#0#HTML" />
+                <element signature="e#23488#23757#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -93,43 +74,46 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;script src=&quot;//y.gtimg.cn/music/h5/player/player.js?max_age=2592000&quot;&gt;&lt;/script&gt;</find>
-      <find>songlist__number</find>
-      <find>mod_btn_green js_all_play</find>
-      <find>data__actions</find>
-      <find>pay</find>
-      <find>display: none;</find>
-      <find>播放</find>
-      <find>btn_big_play</find>
-      <find>plauer</find>
-      <find>&lt;a href=&quot;javascript:;&quot; class=&quot;btn_big_prev&quot; title=&quot;alt+←&quot;&gt;&lt;span class=&quot;icon_txt&quot;&gt;上一首&lt;/span&gt;&lt;/a&gt;</find>
-      <find>player</find>
-      <find>btn_big_prev</find>
-      <find>&lt;a class=&quot;player_login__link&quot; href=&quot;https://y.qq.com/portal/profile.html#stat=y_new.player.header.user_pic&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http://thirdqq.qlogo.cn/g?b=sdk&amp;amp;k=ytIq8QfPM4CpYVS77CXHOw&amp;amp;s=140&amp;amp;t=1532486576&quot; onerror=&quot;this.src='//y.gtimg.cn/mediastyle/global/img/person_300.png?max_age=2592000';this.onerror=null;&quot; class=&quot;player_login__cover js_user_img&quot;&gt;&lt;img src=&quot;//y.gtimg.cn/mediastyle/yqq/img/login_qq.png?max_age=2592000&quot; class=&quot;player_login__icon&quot;&gt;&lt;span class=&quot;player_login__txt&quot;&gt;Ankh&lt;/span&gt;&lt;/a&gt;</find>
-      <find>js_search_tab_cont search_tab_cont</find>
-      <find>&lt;scr</find>
-      <find>href</find>
-      <find>search_input__input</find>
-      <find>&lt;input class=&quot;search_input__input&quot; aria-label=&quot;请输入搜索内容&quot; type=&quot;text&quot; placeholder=&quot;搜索关键字&quot;&gt;</find>
-      <find>search_input__btn</find>
-      <find>mid</find>
-      <find>105719766</find>
+      <find>&lt;%</find>
+      <find>src</find>
+      <find>audio</find>
+      <find>music</find>
       <find>song_name</find>
-      <find>songlist__list</find>
-      <find>songlist__song_txt</find>
-      <find>singer_name</find>
-      <find>albumName_hilight</find>
+      <find>play_music</find>
+      <find>songlist</find>
+      <find>c_tx_highlight</find>
       <find>album_name</find>
-      <find>songname</find>
-      <find>hre</find>
       <find>老狼</find>
+      <find>data-singermid</find>
+      <find>singer_name</find>
+      <find>旅途</find>
+      <find>js_song</find>
+      <find>(Live)</find>
+      <find>时长</find>
+      <find>发布</find>
+      <find>pay</find>
+      <find>play</find>
+      <find>list_menu__icon_play</find>
+      <find>aud</find>
+      <find>player</find>
+      <find>$</find>
+      <find>$()</find>
+      <find>playera</find>
+      <find>btnplay</find>
+      <find>b</find>
+      <find>js_pl</find>
+      <find>displ</find>
+      <find>songlist__song_txt</find>
     </findStrings>
+    <dirStrings>
+      <dir>D:\project\qq-music</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="mailer" />
       </map>
     </option>
   </component>
@@ -154,16 +138,16 @@
         <option value="$PROJECT_DIR$/app/views/to_mailer/sendemail.html.erb" />
         <option value="$PROJECT_DIR$/app/mailers/to_mailer.rb" />
         <option value="$PROJECT_DIR$/app/controllers/devise/registrations_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/home/new_song.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/home/test.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/new_song/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/search/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/search_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_title.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/home/test.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/search_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/search/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/new_song/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/search/index.html.erb" />
       </list>
     </option>
@@ -188,8 +172,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="373" />
-    <option name="y" value="67" />
+    <option name="x" value="11" />
+    <option name="y" value="-17" />
     <option name="width" value="1382" />
     <option name="height" value="689" />
   </component>
@@ -216,34 +200,7 @@
               <item name="qq-music" type="b2602c69:ProjectViewProjectNode" />
               <item name="qq-music" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qq-music" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qq-music" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qq-music" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qq-music" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qq-music" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qq-music" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qq-music" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qq-music" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="new_song" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qq-music" type="b2602c69:ProjectViewProjectNode" />
@@ -262,13 +219,13 @@
             <path>
               <item name="qq-music" type="b2602c69:ProjectViewProjectNode" />
               <item name="qq-music" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qq-music" type="b2602c69:ProjectViewProjectNode" />
               <item name="qq-music" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -287,8 +244,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\project\qq-music\app\controllers" />
       <recent name="D:\project\qq-music\public\image" />
+      <recent name="D:\project\qq-music\app\controllers" />
       <recent name="D:\project\qq-music\app\views\layouts" />
       <recent name="D:\project\qq-music\public" />
       <recent name="D:\project\qq-music\app\assets\javascripts" />
@@ -426,7 +383,10 @@
       <workItem from="1539784967680" duration="4793000" />
       <workItem from="1539829416062" duration="127000" />
       <workItem from="1539847559118" duration="6239000" />
-      <workItem from="1539871526286" duration="3896000" />
+      <workItem from="1539871526286" duration="4882000" />
+      <workItem from="1539915380702" duration="68000" />
+      <workItem from="1540026831624" duration="16332000" />
+      <workItem from="1540082550311" duration="13325000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <created>1539011705066</created>
@@ -442,28 +402,36 @@
       <option name="project" value="LOCAL" />
       <updated>1539139079698</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="master">
+      <created>1539875717703</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539875717703</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174724000" />
+    <option name="totallyTimeSpent" value="205435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24659607" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="调试" order="7" weight="0.4280992" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50226927" side_tool="true" weight="0.39008266" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4977307" visible="true" weight="0.31570247" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4977307" visible="true" weight="0.3123967" />
       <window_info anchor="bottom" id="运行" order="7" weight="0.32838285" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2579425" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="找到" order="8" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -478,22 +446,22 @@
       <window_info anchor="bottom" id="运行" order="7" weight="0.32838285" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3214826" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49848714" visible="true" weight="0.3305785" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5015129" side_tool="true" weight="0.4661157" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="调试" order="13" weight="0.4280992" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
@@ -505,13 +473,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="master" />
     <MESSAGE value="mailer" />
-    <option name="LAST_COMMIT_MESSAGE" value="mailer" />
+    <MESSAGE value="master" />
+    <option name="LAST_COMMIT_MESSAGE" value="master" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -770,69 +738,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27056">
-          <caret line="1424" column="12" selection-start-line="1424" selection-start-column="12" selection-end-line="1424" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/new_song.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7505">
           <caret line="395" column="8" selection-start-line="395" selection-start-column="8" selection-end-line="395" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/search/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/new_song/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1871">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/test.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3287">
-          <caret line="173" column="37" selection-start-line="173" selection-start-column="37" selection-end-line="173" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/storage.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -843,10 +752,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="57" column="42" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/new_song_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/new_song/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="221" column="40" selection-start-line="221" selection-start-column="33" selection-end-line="221" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/test.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="111" column="21" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/search/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="653" column="26" lean-forward="true" selection-start-line="653" selection-start-column="26" selection-end-line="653" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/search/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="242">
+          <caret line="423" lean-forward="true" selection-start-line="423" selection-end-line="423" />
+          <folding>
+            <element signature="e#17578#17711#0#HTML" />
+            <element signature="e#18234#18461#0#HTML" />
+            <element signature="e#18505#18769#0#HTML" />
+            <element signature="e#18813#19077#0#HTML" />
+            <element signature="e#19121#19385#0#HTML" />
+            <element signature="e#19429#19693#0#HTML" />
+            <element signature="e#19737#20001#0#HTML" />
+            <element signature="e#20045#20309#0#HTML" />
+            <element signature="e#20353#20617#0#HTML" />
+            <element signature="e#20662#20931#0#HTML" />
+            <element signature="e#20975#21244#0#HTML" />
+            <element signature="e#21299#21568#0#HTML" />
+            <element signature="e#21604#21873#0#HTML" />
+            <element signature="e#21918#22187#0#HTML" />
+            <element signature="e#22232#22501#0#HTML" />
+            <element signature="e#22546#22815#0#HTML" />
+            <element signature="e#22860#23129#0#HTML" />
+            <element signature="e#23174#23443#0#HTML" />
+            <element signature="e#23488#23757#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>

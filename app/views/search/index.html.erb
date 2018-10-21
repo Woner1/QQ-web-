@@ -1,3 +1,7 @@
+
+<script src="https://y.gtimg.cn/music/h5/client/jsbridge.js?max_age=2592000"></script>
+<link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/player.css?max_age=2592000&amp;v=2017323">
+<link rel="stylesheet" type="text/css" href="https://stdl.qq.com/stdl/qqbrowser/floatlayer/css/qb-ie-remind.css?1539484490960">
 <link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/layout.css?max_age=25920000&amp;v=20180803">
 <link rel="stylesheet" href="//y.gtimg.cn/mediastyle/yqq/search20180104.css?max_age=2592000&amp;v=20180104">
 <link rel="stylesheet" type="text/css" href="https://stdl.qq.com/stdl/qqbrowser/floatlayer/css/qb-ie-remind.css?1539786040041">
@@ -19,7 +23,6 @@
   width: 263%;
 }
 </style>
-
 
 
 
@@ -107,7 +110,7 @@
           </li>
 
           <li>
-            <a href="javascript:;" class="search_result__link js_smartbox_song" data-docid="105719766" data-id="105719766" data-mid="002MRYfm4G4i6g" data-name="旅途">
+            <a  class="search_result__link js_smartbox_song" data-docid="105719766" data-id="105719766" data-mid="002MRYfm4G4i6g" data-name="旅途">
               <span class="search_result__name"><span class="search_result__keyword">旅途</span></span>-
               <span class="search_result__singer">老狼</span>
             </a>
@@ -206,9 +209,72 @@
             <li class="songlist__header_name">歌曲</li>
             <li class="songlist__header_author">歌手</li>
             <li class="songlist__header_album">专辑</li>
-            <li class="songlist__header_time">时长</li>
+            <li class="songlist__header_time" title="">发布</li>
           </ul>
           <ul class="songlist__list">
+            <% for i in 0..19 %>
+              <li class="" mid="105719766" ix="20">
+                <!--
+                hover : songlist__item--hover
+                偶数行：songlist__item--even
+                -->
+                <div class="songlist__item" onmouseover="this.className=(this.className+' songlist__item--hover')" onmouseout="this.className=this.className.replace(/ songlist__item--hover/, '')">
+                  <div class="songlist__edit songlist__edit--check sprite">
+                    <input type="checkbox" class="songlist__checkbox">
+                  </div>
+                  <div class="songlist__songname">
+
+
+                    <a  class="songlist__icon songlist__icon_mv sprite" rel="noopener" target="_blank" title="MV"><span class="icon_txt">MV</span></a>
+
+                    <span class="songlist__songname_txt"><a  class="js_song" title=""><span class="c_tx_highlight" id="c_tx_highlight<%= i %>"></span> <span class="songlist__song_txt" id="songlist__song_txt<%= i%>"></span></a></span>
+
+                    <div class="mod_list_menu">
+                      <a  class="list_menu__item list_menu__play js_play" title="播放" id="js_play<%= i %>">
+                        <i class="list_menu__icon_play" id="list_menu__icon_play<%= i %>" ></i>
+                        <span class="icon_txt" id="icon_txt<%= i %>">播放</span>
+                        <audio id="playera<%= i %>"  loop="loop"/>
+                      </a>
+
+
+
+
+                      <a href="javascript:;" class="list_menu__item list_menu__add js_fav" title="添加到歌单" aria-haspopup="true">
+                        <i class="list_menu__icon_add"></i>
+                        <span class="icon_txt">添加到歌单</span>
+                      </a>
+                      <a href="javascript:;" class="list_menu__item list_menu__down js_down" title="下载" aria-haspopup="true">
+                        <i class="list_menu__icon_down"></i>
+                        <span class="icon_txt">下载</span>
+                      </a>
+                      <a href="javascript:;" class="list_menu__item list_menu__share js_share" title="分享" aria-haspopup="true">
+                        <i class="list_menu__icon_share"></i>
+                        <span class="icon_txt">分享</span>
+                      </a>
+                    </div>
+                  </div>
+
+
+                  <div class="songlist__artist" title="老狼">
+
+
+                    <a  data-singermid="002WkEWV1TA75B" data-singerid="212" title="" class="singer_name" id="singer_name<%= i %>"></a>
+
+                  </div>
+                  <div class="songlist__album">
+                    <a data-albummid="004OIsn73g0H8p" data-albumid="1301623" title="" class="album_name" id="album_name<%= i %>"></a>
+                  </div>
+                  <div class="songlist__time" id="songlist__time<%= i %>">05:22</div>
+                  <div class="songlist__other">
+
+
+                  </div>
+                </div>
+
+              </li>
+            <% end %>
+
+
 
 
           </ul>
@@ -258,95 +324,91 @@
 
 
 
+<!--<script src="https://y.gtimg.cn/music/h5/client/jsbridge.js?max_age=2592000"></script>-->
 
+<!--<script>-->
+<!--    var params = {-->
+<!--        target: "auto"-->
+<!--    };-->
+<!--    var player = new QMplayer(params);-->
+<!--</script>-->
 
 
 <script>
+
+
+
     var pages = 1;
 
     $.ajax({
-        url: "http://s.music.qq.com/fcgi-bin/music_search_new_platform?t=0& n=5&aggr=1&cr=1&loginUin=0& inCharset=GB2312&outCharset=utf-8&notice=0& platform=jqminiframe.json&needNewCode=0&p=" + pages + "&catZhida=0& remoteplace=sizer.newclient.next_song&w=<%= @search %>",
+        url: 'https://c.y.qq.com/soso/fcgi-bin/client_search_cp?ct=24&qqmusic_ver=1298&new_json=1&remoteplace=txt.yqq.center&searchid=44253135475391727&t=0&aggr=1&cr=1&catZhida=1&lossless=0&flag_qc=0&p=' + pages + '&n=20&w=<%= @search %>',
         type: "get",
-        // async:false,
+        async:true,
         dataType: 'jsonp',
         jsonp: "jsonpCallback",
         success: function (data) {
-
             console.log(data);
-           // console.log("http://s.music.qq.com/fcgi-bin/music_search_new_platform?t=0& n=5&aggr=1&cr=1&loginUin=0& inCharset=GB2312&outCharset=utf-8&notice=0& platform=jqminiframe.json&needNewCode=0&p=" + pages + "&catZhida=0& remoteplace=sizer.newclient.next_song&w=<%= @search %>");
-          //获取得到了多少条歌曲
-
-            var curnum=data.data.song.curnum;
+            //获取得到了多少页
+            var curnum = data.data.song.curnum;
+            console.log(curnum);
             var orderBody = '';
-            for(var i=0;i<data.data.song.list.length;i++){
+            for (var i = 0; i < data.data.song.list.length; i++) {
                 //歌曲名字
-                var songname=data.data.song.list[i].fsong
+                var songname = data.data.song.list[i].name;
+                $("#c_tx_highlight"+i).html(songname);
+                $("#c_tx_highlight"+i).attr('title',songname);
                 //歌曲是否有原唱
-                var songlist__song_txt=data.data.song.list[i].lyric;
+                var songlist__song_txt = data.data.song.list[i].album.subtitle;
+                $("#songlist__song_txt"+i).html(songlist__song_txt);
+
                 //歌手名字
-              var  singer_name=data.data.song.list[i].fsinger
+                var singer_name = data.data.song.list[i].singer[0].name;
+                $("#singer_name"+i).html(singer_name);
+                $("#singer_name"+i).attr("title",singer_name);
+
                 //专辑名字
-                var album_name=data.data.song.list[i].albumName_hilight
+                var album_name = data.data.song.list[i].album.name;
+                $("#album_name"+i).html(album_name);
+
+                //设置mid
+                var songmid = data.data.song.list[i].mid;
+
+                //发布时间
+                var songlist__time=data.data.song.list[i].time_public
+                $("#songlist__time"+i).html(songlist__time)
+                $("#songlist__time"+i).attr('title',songlist__time)
+
+                //可否播放
+                var pay_play=data.data.song.list[i].pay.pay_play
+                if (pay_play==0){
+                    $("#icon_txt"+i).attr('title',songmid)
+                }else
+                {
+                    $("#js_play"+i).attr('display','none')
+                }
 
                 //歌手MID
-                var singerMID=data.data.song.list[i].singerMID
-                orderBody+='  <li class="" mid="105719766" ix="'+i+'">\n' +
-                    '                              <!--\n' +
-                    '                              hover : songlist__item--hover\n' +
-                    '                              偶数行：songlist__item--even\n' +
-                    '                              -->\n' +
-                    '                              <div class="songlist__item songlist__item--hover" onmouseover="this.className=(this.className+\' songlist__item--hover\')" onmouseout="this.className=this.className.replace(/ songlist__item--hover/, \'\')">\n' +
-                    '                                <div class="songlist__edit songlist__edit--check sprite">\n' +
-                    '                                  <input type="checkbox" class="songlist__checkbox">\n' +
-                    '                                </div>\n' +
-                    '                                <div class="songlist__songname">\n' +
-                    '                \n' +
-                    '                \n' +
-                    '                                  <a  class="songlist__icon songlist__icon_mv sprite" rel="noopener" target="_blank" title="MV"><span class="icon_txt">MV</span></a>\n' +
-                    '                \n' +
-                    '                                  <span class="songlist__songname_txt"><a  class="js_song" title="'+songname+'"><span class="c_tx_highlight" id="song_name">'+songname+'</span><span class="songlist__song_txt" id="songlist__song_txt">'+songlist__song_txt+'</span></a></span>\n' +
-                    '                \n' +
-                    '                                  <div class="mod_list_menu">\n' +
-                    '                                    <a href="javascript:;" class="list_menu__item list_menu__play js_play" title="播放">\n' +
-                    '                                      <i class="list_menu__icon_play"></i>\n' +
-                    '                                      <span class="icon_txt">播放</span>\n' +
-                    '                                    </a>\n' +
-                    '                                    <a href="javascript:;" class="list_menu__item list_menu__add js_fav" title="添加到歌单" aria-haspopup="true">\n' +
-                    '                                      <i class="list_menu__icon_add"></i>\n' +
-                    '                                      <span class="icon_txt">添加到歌单</span>\n' +
-                    '                                    </a>\n' +
-                    '                                    <a href="javascript:;" class="list_menu__item list_menu__down js_down" title="下载" aria-haspopup="true">\n' +
-                    '                                      <i class="list_menu__icon_down"></i>\n' +
-                    '                                      <span class="icon_txt">下载</span>\n' +
-                    '                                    </a>\n' +
-                    '                                    <a href="javascript:;" class="list_menu__item list_menu__share js_share" title="分享" aria-haspopup="true">\n' +
-                    '                                      <i class="list_menu__icon_share"></i>\n' +
-                    '                                      <span class="icon_txt">分享</span>\n' +
-                    '                                    </a>\n' +
-                    '                                  </div>\n' +
-                    '                                </div>\n' +
-                    '                \n' +
-                    '                \n' +
-                    '                                <div class="songlist__artist" title="'+singer_name+'">\n' +
-                    '                \n' +
-                    '                \n' +
-                    '                                  <a  data-singermid="'+singerMID+'" data-singerid="212" title="'+singer_name+'" class="singer_name">'+singer_name+'</a>\n' +
-                    '                \n' +
-                    '                                </div>\n' +
-                    '                                <div class="songlist__album">\n' +
-                    '                                  <a data-albummid="004OIsn73g0H8p" data-albumid="1301623"  title="'+album_name+'" class="album_name">'+album_name+'</a>\n' +
-                    '                                </div>\n' +
-                    '                                <div class="songlist__time">05:22</div>\n' +
-                    '                                <div class="songlist__other">\n' +
-                    '                \n' +
-                    '                \n' +
-                    '                                </div>\n' +
-                    '                              </div>\n' +
-                    '                \n' +
-                    '                            </li>'
-            }
+                var singerMID = data.data.song.list[i].singerMID
 
-            $('.songlist__list').append(orderBody);
+                var url_play='https://api.mlwei.com/music/api/?key=523077333&cache=1&type=url&id='+songmid+'&size=hq';
+                $("#playera"+i).attr('src',url_play)
+
+                // //播放
+                // $("#js_play"+i).click(function () {
+                //     var player =document.getElementById("#player"+i)
+                //     player.play(player);
+                // })
+
+
+
+
+
+
+
+
+
+
+            }
 
 
 
@@ -358,3 +420,230 @@
     });
 
 </script>
+
+
+<script>
+    window.onload=function() {
+
+        $("#js_play0").click(function () {
+               var player0=document.getElementById('playera0')
+                if (player0.paused){ /*如果已经暂停*/
+                    player0.play(); /*播放*/
+
+                }else {
+                    player0.pause();/*暂停*/
+                }
+            })
+
+        $("#js_play1").click(function () {
+            var player1 = document.getElementById('playera1')
+            if (player1.paused) { /*如果已经暂停*/
+                player1.play();
+                /*播放*/
+            } else {
+                player1.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play2").click(function () {
+            var player2=document.getElementById('playera2')
+            if (player2.paused){ /*如果已经暂停*/
+                player2.play(); /*播放*/
+            }else {
+                player2.pause();/*暂停*/
+            }
+        })
+
+        $("#js_play3").click(function () {
+            var player3 = document.getElementById('playera3')
+            if (player3.paused) { /*如果已经暂停*/
+                player3.play();
+                /*播放*/
+            } else {
+                player3.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play4").click(function () {
+            var player4 = document.getElementById('playera4')
+            if (player4.paused) { /*如果已经暂停*/
+                player4.play();
+                /*播放*/
+            } else {
+                player4.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play5").click(function () {
+            var player5 = document.getElementById('playera5')
+            if (player5.paused) { /*如果已经暂停*/
+                player5.play();
+                /*播放*/
+            } else {
+                player5.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play6").click(function () {
+            var player6 = document.getElementById('playera6')
+            if (player6.paused) { /*如果已经暂停*/
+                player6.play();
+                /*播放*/
+            } else {
+                player6.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play7").click(function () {
+            var player7 = document.getElementById('playera7')
+            if (player7.paused) { /*如果已经暂停*/
+                player7.play();
+                /*播放*/
+            } else {
+                player7.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play8").click(function () {
+            var player8 = document.getElementById('playera8')
+            if (player8.paused) { /*如果已经暂停*/
+                player8.play();
+                /*播放*/
+            } else {
+                player8.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play9").click(function () {
+            var player9 = document.getElementById('playera9')
+            if (player9.paused) { /*如果已经暂停*/
+                player9.play();
+                /*播放*/
+            } else {
+                player9.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play10").click(function () {
+            var player10 = document.getElementById('playera10')
+            if (player10.paused) { /*如果已经暂停*/
+                player10.play();
+                /*播放*/
+            } else {
+                player10.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play11").click(function () {
+            var player11 = document.getElementById('playera11')
+            if (player11.paused) { /*如果已经暂停*/
+                player11.play();
+                /*播放*/
+            } else {
+                player11.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play12").click(function () {
+            var player12 = document.getElementById('playera12')
+            if (player12.paused) { /*如果已经暂停*/
+                player12.play();
+                /*播放*/
+            } else {
+                player12.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play13").click(function () {
+            var player13 = document.getElementById('playera13')
+            if (player13.paused) { /*如果已经暂停*/
+                player13.play();
+                /*播放*/
+            } else {
+                player13.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play14").click(function () {
+            var player14 = document.getElementById('playera14')
+            if (player14.paused) { /*如果已经暂停*/
+                player14.play();
+                /*播放*/
+            } else {
+                player14.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play15").click(function () {
+            var player15 = document.getElementById('playera15')
+            if (player15.paused) { /*如果已经暂停*/
+                player15.play();
+                /*播放*/
+            } else {
+                player15.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play16").click(function () {
+            var player16 = document.getElementById('playera16')
+            if (player16.paused) { /*如果已经暂停*/
+                player16.play();
+                /*播放*/
+            } else {
+                player16.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play17").click(function () {
+            var player17 = document.getElementById('playera17')
+            if (player17.paused) { /*如果已经暂停*/
+                player17.play();
+                /*播放*/
+            } else {
+                player17.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play18").click(function () {
+            var player18 = document.getElementById('playera18')
+            if (player18.paused) { /*如果已经暂停*/
+                player18.play();
+                /*播放*/
+            } else {
+                player18.pause();
+                /*暂停*/
+            }
+        })
+
+        $("#js_play19").click(function () {
+            var player19 = document.getElementById('playera19')
+            if (player19.paused) { /*如果已经暂停*/
+                player19.play();
+                /*播放*/
+            } else {
+                player19.pause();
+                /*暂停*/
+            }
+        })
+    }
+</script>
+
+
+<button id="bb">11</button>
+<audio id="a1"  loop="loop" src="https://api.mlwei.com/music/api/?key=523077333&cache=1&type=url&id=004DXFlC0nsTCZ&size=hq"/>

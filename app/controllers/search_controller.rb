@@ -4,5 +4,8 @@ class SearchController < ApplicationController
   end
 
   def show
+
+      @songmid=params[:id]
+
   end
 end
